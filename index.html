@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Operator Diagnostic — Operator Intelligence Suite</title>
-  <meta name="description" content="Four-section commercial diagnostic for hospitality and short-term rental operators. Demand, distribution, repeat guest value, and unit profitability.">
+  <meta name="description" content="Six-dimension commercial diagnostic for hospitality and short-term rental operators. Find which deep-dive tool to use first.">
 
   <meta property="og:title" content="Operator Diagnostic — Operator Intelligence Suite">
-  <meta property="og:description" content="Answer four short sections and get a ranked priority diagnostic for your operation.">
+  <meta property="og:description" content="Answer a short set of questions and get a growth brief that points you to the right deep-dive tool.">
   <meta property="og:type" content="website">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPJ7VKS451"></script>
@@ -28,31 +28,22 @@
       --alert: #C0392B;
       --positive: #1E8449;
       --warning: #F39C12;
-
       --ink: #0A0A0F;
       --ink2: #2C2C3A;
       --muted: #7A7A8C;
       --muted2: #ADADBE;
-
       --bg: #F2F2F7;
       --card: #FFFFFF;
       --border: #E5E5EA;
       --border-light: #F0F0F4;
-
       --radius-lg: 16px;
       --radius-md: 12px;
       --radius-sm: 10px;
-
       --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
       --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-      --shadow-lg: 0 8px 24px rgba(0,0,0,0.10);
     }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: -apple-system, 'Inter', BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -62,435 +53,240 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
     header {
       background: rgba(8,8,14,0.96);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      position: sticky; top: 0; z-index: 100;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .header-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+      max-width: 1280px; margin: 0 auto; padding: 10px 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
 
     .brand-mark {
-      width: 30px;
-      height: 30px;
-      background: var(--accent);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: -0.02em;
-      flex-shrink: 0;
+      width: 30px; height: 30px; background: var(--accent);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 700; font-size: 13px; flex-shrink: 0;
     }
 
     .brand-text { color: white; }
-
-    .brand-title {
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-    }
-
-    .brand-subtitle {
-      font-size: 12px;
-      color: var(--muted2);
-      margin-top: 1px;
-    }
-
-    .header-actions {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      flex-shrink: 0;
-    }
+    .brand-title { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+    .brand-subtitle { font-size: 12px; color: var(--muted2); margin-top: 1px; }
 
     .header-link {
-      color: white;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 8px 14px;
-      border-radius: 8px;
+      color: white; font-size: 13px; font-weight: 500;
+      padding: 8px 14px; border-radius: 8px;
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.15);
-      transition: all 0.2s;
-      white-space: nowrap;
+      transition: all 0.2s; white-space: nowrap;
     }
 
     .header-link:hover { background: rgba(255,255,255,0.15); }
 
-    .header-link:focus-visible {
-      outline: 2px solid rgba(255,255,255,0.6);
-      outline-offset: 2px;
-    }
-
     .hero {
       background: linear-gradient(180deg, white 0%, var(--bg) 100%);
-      padding: 28px 20px 20px;
-      text-align: center;
+      padding: 28px 20px 20px; text-align: center;
     }
 
-    .hero-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
+    .hero-inner { max-width: 720px; margin: 0 auto; }
 
     .hero-eyebrow {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      background: var(--accent-light);
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-bottom: 10px;
+      display: inline-block; font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent); background: var(--accent-light);
+      padding: 4px 10px; border-radius: 20px; margin-bottom: 10px;
     }
 
     .hero h1 {
       font-size: clamp(22px, 3.5vw, 30px);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 8px;
-      color: var(--ink);
+      font-weight: 800; letter-spacing: -0.03em;
+      line-height: 1.2; margin-bottom: 8px;
     }
 
     .hero-subtitle {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.55;
-      max-width: 640px;
-      margin: 0 auto;
+      font-size: 14px; color: var(--muted);
+      line-height: 1.55; max-width: 640px; margin: 0 auto;
     }
 
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 20px 28px;
-    }
+    main { max-width: 760px; margin: 0 auto; padding: 0 20px 28px; }
 
     .panel {
-      background: var(--card);
-      border-radius: var(--radius-md);
-      padding: 20px 22px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 14px;
+      background: var(--card); border-radius: var(--radius-md);
+      padding: 20px 22px; border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm); margin-bottom: 14px;
     }
 
     .section-label {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 14px;
+      font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent); margin-bottom: 14px;
     }
 
-    .question-block {
-      margin-bottom: 18px;
-    }
-
-    .question-block:last-child {
-      margin-bottom: 0;
-    }
+    .question-block { margin-bottom: 18px; }
+    .question-block:last-child { margin-bottom: 0; }
 
     .question-text {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 10px;
-      line-height: 1.45;
+      font-size: 14px; font-weight: 600;
+      color: var(--ink); margin-bottom: 10px; line-height: 1.45;
     }
 
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .btn-group { display: flex; flex-wrap: wrap; gap: 8px; }
 
     .choice-btn {
-      font-family: inherit;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--ink2);
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 9px 12px;
-      cursor: pointer;
-      transition: all 0.15s;
-      line-height: 1.3;
-      text-align: left;
+      font-family: inherit; font-size: 12px; font-weight: 600;
+      color: var(--ink2); background: var(--bg);
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      padding: 9px 12px; cursor: pointer;
+      transition: all 0.15s; line-height: 1.3; text-align: left;
     }
 
-    .choice-btn:hover {
-      border-color: var(--accent);
-      background: var(--accent-light);
-    }
-
-    .choice-btn.selected {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: white;
-    }
-
-    .choice-btn:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
-
-    .capture-label {
-      font-size: 13px;
-      color: var(--ink2);
-      line-height: 1.55;
-      margin-bottom: 14px;
-    }
-
-    .capture-form {
-      display: grid;
-      gap: 12px;
-    }
-
-    .field label {
-      display: block;
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .field input,
-    .field select {
-      width: 100%;
-      font-family: inherit;
-      font-size: 14px;
-      padding: 11px 12px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: var(--bg);
-      color: var(--ink);
-    }
-
-    .field input:focus,
-    .field select:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(27, 79, 114, 0.12);
-    }
+    .choice-btn:hover { border-color: var(--accent); background: var(--accent-light); }
+    .choice-btn.selected { background: var(--accent); border-color: var(--accent); color: white; }
+    .choice-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
     .submit-btn {
-      display: block;
-      width: 100%;
-      margin-top: 18px;
-      font-family: inherit;
-      font-size: 15px;
-      font-weight: 700;
-      color: white;
-      background: var(--accent);
-      border: none;
-      border-radius: var(--radius-sm);
-      padding: 14px 18px;
-      cursor: pointer;
+      display: block; width: 100%; margin-top: 4px;
+      font-family: inherit; font-size: 15px; font-weight: 700;
+      color: white; background: var(--accent);
+      border: none; border-radius: var(--radius-sm);
+      padding: 14px 18px; cursor: pointer;
       transition: background 0.2s, transform 0.15s;
     }
 
-    .submit-btn:hover {
-      background: var(--accent-dark);
-      transform: translateY(-1px);
-    }
-
-    .submit-btn:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
+    .submit-btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
 
     .output-section-title {
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      margin-bottom: 12px;
+      font-size: 13px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--muted); margin-bottom: 12px;
     }
 
-    .priority-card {
-      background: var(--card);
-      border-radius: var(--radius-md);
-      padding: 16px 18px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 10px;
-      position: relative;
-      overflow: hidden;
+    .output-text {
+      font-size: 14px; color: var(--ink2);
+      line-height: 1.6; margin-bottom: 10px;
     }
 
-    .priority-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--accent);
-      opacity: 0.85;
-    }
+    .output-text:last-child { margin-bottom: 0; }
 
-    .priority-num {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      margin-bottom: 6px;
-    }
-
-    .priority-label {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.4;
-      margin-bottom: 8px;
-    }
-
-    .priority-look {
-      font-size: 13px;
-      color: var(--ink2);
-      line-height: 1.5;
-      margin-bottom: 10px;
-    }
-
-    .priority-tool {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    .priority-tool:hover { text-decoration: underline; }
-
-    .healthy-message {
-      background: rgba(30, 132, 73, 0.08);
-      border: 1px solid rgba(30, 132, 73, 0.2);
-      border-radius: var(--radius-md);
-      padding: 18px 20px;
-      font-size: 14px;
-      color: var(--ink2);
-      line-height: 1.6;
-    }
-
-    .snapshot-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-    }
-
-    .snapshot-table th,
-    .snapshot-table td {
-      padding: 12px 10px;
-      text-align: left;
+    .dim-row {
+      display: grid;
+      grid-template-columns: 140px 1fr 72px;
+      gap: 10px; align-items: center;
+      padding: 10px 0;
       border-bottom: 1px solid var(--border-light);
-      vertical-align: top;
     }
 
-    .snapshot-table th {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
+    .dim-row:last-child { border-bottom: none; }
+
+    .dim-name { font-size: 13px; font-weight: 600; color: var(--ink); }
+
+    .dim-bar-track {
+      height: 8px; background: var(--bg);
+      border-radius: 20px; overflow: hidden;
+    }
+
+    .dim-bar-fill {
+      height: 100%; border-radius: 20px;
+      background: var(--accent);
+      transition: width 0.4s ease;
+    }
+
+    .dim-bar-fill.weak { background: var(--alert); }
+    .dim-bar-fill.gap { background: var(--warning); }
+    .dim-bar-fill.strong { background: var(--positive); }
+
+    .dim-meta { text-align: right; font-size: 11px; color: var(--muted); }
+    .dim-meta strong { display: block; font-size: 13px; color: var(--ink); }
+
+    .constraint-card {
       background: var(--bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px; margin-bottom: 10px;
     }
 
-    .snapshot-table tr:last-child td {
-      border-bottom: none;
+    .constraint-card:last-child { margin-bottom: 0; }
+
+    .constraint-label {
+      font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--accent); margin-bottom: 4px;
     }
 
-    .status-cell {
-      font-size: 18px;
-      line-height: 1;
-      width: 48px;
+    .constraint-title {
+      font-size: 15px; font-weight: 700;
+      color: var(--ink); margin-bottom: 6px;
     }
 
-    .output-footer-text {
-      font-size: 13px;
-      color: var(--ink2);
-      line-height: 1.6;
-      margin-bottom: 16px;
+    .constraint-text { font-size: 13px; color: var(--ink2); line-height: 1.55; }
+
+    .route-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 18px; margin-bottom: 10px;
+      position: relative; overflow: hidden;
     }
 
-    .output-footer-text a {
-      color: var(--accent);
-      font-weight: 600;
+    .route-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: var(--accent); opacity: 0.85;
     }
 
-    .output-footer-text a:hover { text-decoration: underline; }
+    .route-card:last-child { margin-bottom: 0; }
 
-    .output-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    .route-priority {
+      font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--accent); margin-bottom: 6px;
+    }
+
+    .route-title {
+      font-size: 15px; font-weight: 700;
+      color: var(--ink); margin-bottom: 8px;
+    }
+
+    .route-text {
+      font-size: 13px; color: var(--ink2);
+      line-height: 1.55; margin-bottom: 10px;
+    }
+
+    .route-link {
+      font-size: 12px; font-weight: 600; color: var(--accent);
+    }
+
+    .route-link:hover { text-decoration: underline; }
+
+    .route-note {
+      font-size: 12px; color: var(--muted);
+      font-style: italic; margin-bottom: 8px; line-height: 1.5;
     }
 
     .secondary-btn {
-      font-family: inherit;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--accent);
-      background: white;
+      font-family: inherit; font-size: 13px; font-weight: 600;
+      color: var(--accent); background: white;
       border: 1px solid var(--accent);
       border-radius: var(--radius-sm);
-      padding: 10px 16px;
-      cursor: pointer;
+      padding: 10px 16px; cursor: pointer;
       transition: all 0.2s;
     }
 
-    .secondary-btn:hover {
-      background: var(--accent-light);
-    }
-
-    .secondary-btn:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
+    .secondary-btn:hover { background: var(--accent-light); }
 
     .hidden { display: none !important; }
 
     footer {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 16px 20px 24px;
-      text-align: center;
-      font-size: 11px;
-      color: var(--muted);
+      max-width: 1280px; margin: 0 auto;
+      padding: 16px 20px 24px; text-align: center;
+      font-size: 11px; color: var(--muted);
       border-top: 1px solid var(--border);
     }
 
@@ -504,26 +300,9 @@
       .panel { padding: 16px; }
       .btn-group { flex-direction: column; }
       .choice-btn { width: 100%; }
-      .snapshot-table th:nth-child(3),
-      .snapshot-table td:nth-child(3) { min-width: 140px; }
+      .dim-row { grid-template-columns: 1fr; gap: 6px; }
+      .dim-meta { text-align: left; }
     }
-
-    @media print {
-      header, footer, .output-actions, #input-state, .hero { display: none !important; }
-      body { background: white; }
-      main { max-width: none; padding: 0; }
-      .panel { box-shadow: none; break-inside: avoid; }
-      #output-state { display: block !important; }
-      .print-title {
-        display: block !important;
-        text-align: center;
-        margin-bottom: 20px;
-        padding-bottom: 12px;
-        border-bottom: 2px solid var(--accent);
-      }
-    }
-
-    .print-title { display: none; }
   </style>
 </head>
 <body>
@@ -537,476 +316,406 @@
           <div class="brand-subtitle">Operator Intelligence Suite</div>
         </div>
       </div>
-      <div class="header-actions">
-        <a href="https://rbisschoff.github.io/operator-intelligence-suite/" class="header-link">Suite Hub</a>
-        <a href="https://linkedin.com/in/rogerbisschoff" target="_blank" rel="noopener noreferrer" class="header-link">LinkedIn</a>
-      </div>
+      <a href="https://rbisschoff.github.io/operator-intelligence-suite/" class="header-link">Suite Hub</a>
     </div>
   </header>
 
   <section class="hero" id="hero">
     <div class="hero-inner">
-      <div class="hero-eyebrow">Operator Series · Commercial Diagnostic</div>
-      <h1 id="hero-title">Where should you focus first?</h1>
+      <div class="hero-eyebrow">Operator Series · Growth Brief</div>
+      <h1 id="hero-title">Which tool should you run first?</h1>
       <p class="hero-subtitle" id="hero-subtitle">
-        Answer four short sections based on what you know about your operation. If you have already used the individual tools, use those outputs here. If not, use your best estimate — the diagnostic is still useful.
+        You do not need to know the suite to use it. Answer a short set of questions across six commercial dimensions and this diagnostic will point you to the one or two deep-dive tools that matter most right now.
       </p>
     </div>
   </section>
 
   <main>
-    <div class="print-title">
-      <strong style="font-size:18px;color:var(--accent);">Operator Diagnostic</strong><br>
-      <span style="font-size:12px;color:var(--muted);">Operator Intelligence Suite · Roger Bisschoff</span>
-    </div>
-
     <div id="input-state">
       <form id="diagnostic-form" novalidate>
-        <div class="panel">
-          <div class="section-label">Demand &amp; Markets</div>
-          <div class="question-block">
-            <div class="question-text">What is your China readiness score?</div>
-            <div class="btn-group" data-field="chinaReadiness">
-              <button type="button" class="choice-btn" data-value="not_assessed">Not assessed</button>
-              <button type="button" class="choice-btn" data-value="low">Low (0–40)</button>
-              <button type="button" class="choice-btn" data-value="medium">Medium (41–70)</button>
-              <button type="button" class="choice-btn" data-value="high">High (71–100)</button>
+        <div class="panel" data-dimension="ai-visibility">
+          <div class="section-label">1. AI visibility</div>
+          <div class="question-block" data-q="ai1">
+            <div class="question-text">Does your direct-booking website allow AI crawlers, with no robots.txt block or firewall in the way?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2">Yes</button>
+              <button type="button" class="choice-btn" data-score="1">Not sure</button>
+              <button type="button" class="choice-btn" data-score="0">No</button>
             </div>
           </div>
-          <div class="question-block">
-            <div class="question-text">What is Chinese inbound demand in your city?</div>
-            <div class="btn-group" data-field="chinaDemand">
-              <button type="button" class="choice-btn" data-value="not_assessed">Not assessed</button>
-              <button type="button" class="choice-btn" data-value="low">Low</button>
-              <button type="button" class="choice-btn" data-value="medium">Medium</button>
-              <button type="button" class="choice-btn" data-value="high">High</button>
+          <div class="question-block" data-q="ai2">
+            <div class="question-text">Is your property described in specific traveller terms (the neighbourhood, who it suits, the practical detail) rather than generic marketing language?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2">Yes, specific</button>
+              <button type="button" class="choice-btn" data-score="1">Somewhat</button>
+              <button type="button" class="choice-btn" data-score="0">No, generic</button>
             </div>
           </div>
         </div>
 
-        <div class="panel">
-          <div class="section-label">Distribution Cost</div>
-          <div class="question-block">
-            <div class="question-text">What is your blended true distribution cost (commission + all hidden costs)?</div>
-            <div class="btn-group" data-field="distCost">
-              <button type="button" class="choice-btn" data-value="not_assessed">Not assessed</button>
-              <button type="button" class="choice-btn" data-value="under18">Under 18%</button>
-              <button type="button" class="choice-btn" data-value="18-25">18–25%</button>
-              <button type="button" class="choice-btn" data-value="over25">Over 25%</button>
+        <div class="panel" data-dimension="demand">
+          <div class="section-label">2. Demand</div>
+          <div class="question-block" data-q="dem1">
+            <div class="question-text">Do you know which source markets actually drive your bookings?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2">Yes, clearly</button>
+              <button type="button" class="choice-btn" data-score="1">Roughly</button>
+              <button type="button" class="choice-btn" data-score="0">No</button>
             </div>
           </div>
-          <div class="question-block">
-            <div class="question-text">Is your direct channel cheaper than your best OTA?</div>
-            <div class="btn-group" data-field="directCheaper">
-              <button type="button" class="choice-btn" data-value="not_assessed">Not assessed</button>
-              <button type="button" class="choice-btn" data-value="yes">Yes</button>
-              <button type="button" class="choice-btn" data-value="no">No</button>
-              <button type="button" class="choice-btn" data-value="same">About the same</button>
+          <div class="question-block" data-q="dem2">
+            <div class="question-text">Are you actively developing a high-potential inbound market, or leaving that demand to the OTAs?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2">Actively developing</button>
+              <button type="button" class="choice-btn" data-score="1">Considering it</button>
+              <button type="button" class="choice-btn" data-score="0">Leaving it to OTAs</button>
             </div>
           </div>
         </div>
 
-        <div class="panel">
-          <div class="section-label">Repeat Guest Value</div>
-          <div class="question-block">
-            <div class="question-text">What share of your repeat guests rebook via OTA instead of direct?</div>
-            <div class="btn-group" data-field="repeatShare">
-              <button type="button" class="choice-btn" data-value="not_assessed">Not assessed</button>
-              <button type="button" class="choice-btn" data-value="under30">Under 30%</button>
-              <button type="button" class="choice-btn" data-value="30-60">30–60%</button>
-              <button type="button" class="choice-btn" data-value="over60">Over 60%</button>
+        <div class="panel" data-dimension="distribution-cost">
+          <div class="section-label">3. Distribution cost</div>
+          <div class="question-block" data-q="dist1">
+            <div class="question-text">Do you know your true blended cost of distribution, including the hidden costs, not only the headline OTA commission?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2">Yes</button>
+              <button type="button" class="choice-btn" data-score="1">Roughly</button>
+              <button type="button" class="choice-btn" data-score="0">No</button>
             </div>
           </div>
-          <div class="question-block">
-            <div class="question-text">Estimated annual revenue lost to OTA rebooking commission on repeat guests?</div>
-            <div class="btn-group" data-field="repeatRevenue">
-              <button type="button" class="choice-btn" data-value="not_assessed">Not assessed</button>
-              <button type="button" class="choice-btn" data-value="under5k">Under €5K</button>
-              <button type="button" class="choice-btn" data-value="5k-20k">€5K–€20K</button>
-              <button type="button" class="choice-btn" data-value="over20k">Over €20K</button>
+          <div class="question-block" data-q="dist2">
+            <div class="question-text">Is your direct channel cheaper for the guest than your best OTA rate?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2">Yes</button>
+              <button type="button" class="choice-btn" data-score="1">About the same</button>
+              <button type="button" class="choice-btn" data-score="0">No</button>
             </div>
           </div>
-        </div>
-
-        <div class="panel">
-          <div class="section-label">Unit Profitability</div>
-          <div class="question-block">
-            <div class="question-text">How does your worst-performing unit compare to your portfolio average contribution margin?</div>
-            <div class="btn-group" data-field="unitGap">
-              <button type="button" class="choice-btn" data-value="not_assessed">Not assessed</button>
-              <button type="button" class="choice-btn" data-value="within10">Within 10%</button>
-              <button type="button" class="choice-btn" data-value="10-25">10–25% below</button>
-              <button type="button" class="choice-btn" data-value="over25">More than 25% below</button>
-            </div>
-          </div>
-          <div class="question-block">
-            <div class="question-text">Do you know which unit in your portfolio is least profitable right now?</div>
-            <div class="btn-group" data-field="knowsWorstUnit">
-              <button type="button" class="choice-btn" data-value="yes">Yes</button>
-              <button type="button" class="choice-btn" data-value="no">No</button>
+          <div class="question-block" data-q="dist3">
+            <div class="question-text">Is more than half your volume concentrated in a single OTA?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2">No</button>
+              <button type="button" class="choice-btn" data-score="1">Somewhat</button>
+              <button type="button" class="choice-btn" data-score="0">Yes</button>
             </div>
           </div>
         </div>
 
-        <div class="panel">
-          <p class="capture-label">Optional — leave your details to receive a copy of your diagnostic and occasional operator insights. No spam, no sales pitch.</p>
-          <div class="capture-form">
-            <div class="field">
-              <label for="capture-name">Name</label>
-              <input type="text" id="capture-name" name="name" placeholder="Your name" autocomplete="name">
-            </div>
-            <div class="field">
-              <label for="capture-email">Email</label>
-              <input type="email" id="capture-email" name="email" placeholder="Your email — to receive your diagnostic summary" autocomplete="email">
-            </div>
-            <div class="field">
-              <label for="capture-properties">Property count</label>
-              <select id="capture-properties" name="propertyCount">
-                <option value="">Select range</option>
-                <option value="1-10">1–10</option>
-                <option value="11-50">11–50</option>
-                <option value="51-200">51–200</option>
-                <option value="200+">200+</option>
-              </select>
+        <div class="panel" data-dimension="unit-profitability">
+          <div class="section-label">4. Unit profitability</div>
+          <div class="question-block" data-q="unit1">
+            <div class="question-text">Can you see profitability at the level of a single unit, not only the portfolio average?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2">Yes</button>
+              <button type="button" class="choice-btn" data-score="1">Partially</button>
+              <button type="button" class="choice-btn" data-score="0">No</button>
             </div>
           </div>
-          <button type="submit" class="submit-btn">Generate my diagnostic →</button>
+          <div class="question-block" data-q="unit2">
+            <div class="question-text">Do you know which of your units lose money?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2">Yes</button>
+              <button type="button" class="choice-btn" data-score="1">Roughly</button>
+              <button type="button" class="choice-btn" data-score="0">No</button>
+            </div>
+          </div>
         </div>
+
+        <div class="panel" data-dimension="guest-experience">
+          <div class="section-label">5. Guest experience</div>
+          <div class="question-block" data-q="gx1">
+            <div class="question-text">Do you capture and act on guest feedback systematically, or only read reviews as they arrive?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2">Systematically</button>
+              <button type="button" class="choice-btn" data-score="1">Occasionally</button>
+              <button type="button" class="choice-btn" data-score="0">Not really</button>
+            </div>
+          </div>
+          <div class="question-block" data-q="gx2">
+            <div class="question-text">Do you know your return rate, the share of guests who come back?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2">Yes</button>
+              <button type="button" class="choice-btn" data-score="1">Roughly</button>
+              <button type="button" class="choice-btn" data-score="0">No</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" data-dimension="repeat-guest-value">
+          <div class="section-label">6. Repeat guest value</div>
+          <div class="question-block" data-q="rep1">
+            <div class="question-text">When guests return, do they mostly rebook direct, or come back through the OTA you already paid to acquire them?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2">Mostly direct</button>
+              <button type="button" class="choice-btn" data-score="1">Mixed</button>
+              <button type="button" class="choice-btn" data-score="0">Mostly via OTA</button>
+            </div>
+          </div>
+          <div class="question-block" data-q="rep2">
+            <div class="question-text">Have you calculated the annual revenue and commission lost when repeat guests rebook through an OTA?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2">Yes</button>
+              <button type="button" class="choice-btn" data-score="1">No, but aware of it</button>
+              <button type="button" class="choice-btn" data-score="0">Never considered it</button>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">See my growth brief</button>
       </form>
     </div>
 
     <div id="output-state" class="hidden">
-      <section class="panel" id="priority-section">
-        <div class="output-section-title">Priority actions</div>
-        <div id="priority-list"></div>
+      <section class="panel">
+        <div class="output-section-title">Where you stand today</div>
+        <div id="block-stand"></div>
       </section>
 
       <section class="panel">
-        <div class="output-section-title">Diagnostic snapshot</div>
-        <div style="overflow-x:auto;">
-          <table class="snapshot-table" id="snapshot-table">
-            <thead>
-              <tr>
-                <th>Dimension</th>
-                <th>Status</th>
-                <th>Signal</th>
-              </tr>
-            </thead>
-            <tbody id="snapshot-body"></tbody>
-          </table>
-        </div>
+        <div class="output-section-title">Where growth is constrained</div>
+        <div id="block-constrained"></div>
       </section>
 
       <section class="panel">
-        <p class="output-footer-text">
-          This diagnostic was produced using the <a href="https://rbisschoff.github.io/operator-intelligence-suite/" target="_blank" rel="noopener noreferrer">Operator Intelligence Suite</a> — a free toolkit for hospitality and short-term rental operators built from fifteen years of operator-side experience.
+        <div class="output-section-title">Where to direct investment</div>
+        <div id="block-invest"></div>
+      </section>
+
+      <section class="panel">
+        <p class="output-text">
+          This is a triage read, not a full diagnosis. The deep-dive tool named above will take you further on the dimension that matters most.
         </p>
-        <div class="output-actions">
-          <button type="button" class="secondary-btn" id="print-btn">Print this diagnostic</button>
-          <button type="button" class="secondary-btn" id="restart-btn">Start over</button>
-        </div>
+        <p class="output-text">
+          <a href="https://rbisschoff.github.io/operator-intelligence-suite/">Back to the Operator Intelligence Suite</a>
+        </p>
+        <button type="button" class="secondary-btn" id="restart-btn">Start again</button>
       </section>
     </div>
   </main>
 
   <footer>
-    <p>Operator Intelligence Suite — by <a href="https://linkedin.com/in/rogerbisschoff" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a></p>
-    <p>A practical toolkit for hospitality and short-term rental operators.</p>
+    <p>Framework by Roger Bisschoff · First published 2026 · Part of the <a href="https://rbisschoff.github.io/operator-intelligence-suite/">Operator Intelligence Suite</a></p>
   </footer>
 
   <script>
-    const WEBHOOK_URL = 'YOUR_WEBHOOK_URL_HERE';
-
-    const TOOLS = {
-      china: {
-        name: 'ChinaCheck',
-        url: 'https://rbisschoff.github.io/chinacheck/'
+    const DIMENSIONS = [
+      {
+        id: 'ai-visibility',
+        name: 'AI visibility',
+        funnelOrder: 1,
+        questionIds: ['ai1', 'ai2'],
+        tool: { name: 'AI-Ready Audit', url: 'https://rbisschoff.github.io/ai-ready-audit/' },
+        constraint: 'If assistants cannot read or recommend your direct site, downstream distribution work has less to land on.'
       },
-      distribution: {
-        name: 'Distribution Cost Analyser',
-        url: 'https://rbisschoff.github.io/distribution-cost-analyser/'
+      {
+        id: 'demand',
+        name: 'Demand',
+        funnelOrder: 2,
+        questionIds: ['dem1', 'dem2'],
+        tool: { name: 'ChinaCheck', url: 'https://rbisschoff.github.io/chinacheck/' },
+        constraint: 'Without a clear read on source markets and inbound potential, channel spend is harder to justify.'
       },
-      repeat: {
-        name: 'Repeat Guest Value',
-        url: 'https://rbisschoff.github.io/repeat-guest-value/'
+      {
+        id: 'distribution-cost',
+        name: 'Distribution cost',
+        funnelOrder: 3,
+        questionIds: ['dist1', 'dist2', 'dist3'],
+        tool: { name: 'Distribution Cost Analyser', url: 'https://rbisschoff.github.io/distribution-cost-analyser/' },
+        constraint: 'Margin leaks through the channel mix before you ever get to unit-level or repeat-guest economics.'
       },
-      margin: {
-        name: 'Contribution Margin Analyser',
-        url: 'https://rbisschoff.github.io/contribution-margin-analyser/'
+      {
+        id: 'unit-profitability',
+        name: 'Unit profitability',
+        funnelOrder: 4,
+        questionIds: ['unit1', 'unit2'],
+        tool: { name: 'Contribution Margin Analyser', url: 'https://rbisschoff.github.io/contribution-margin-analyser/' },
+        constraint: 'Portfolio averages can hide units that are quietly destroying value.'
+      },
+      {
+        id: 'guest-experience',
+        name: 'Guest experience',
+        funnelOrder: 5,
+        questionIds: ['gx1', 'gx2'],
+        tool: null,
+        constraint: 'Weak feedback loops and unknown return rates make it harder to improve what guests actually experience.'
+      },
+      {
+        id: 'repeat-guest-value',
+        name: 'Repeat guest value',
+        funnelOrder: 6,
+        questionIds: ['rep1', 'rep2'],
+        tool: { name: 'Repeat Guest Value', url: 'https://rbisschoff.github.io/repeat-guest-value/' },
+        constraint: 'Repeat guests rebooking via OTA turn free revenue into commission you have already paid for once.'
       }
-    };
+    ];
 
-    const answers = {
-      chinaReadiness: null,
-      chinaDemand: null,
-      distCost: null,
-      directCheaper: null,
-      repeatShare: null,
-      repeatRevenue: null,
-      unitGap: null,
-      knowsWorstUnit: null
-    };
+    const answers = {};
 
-    document.querySelectorAll('.btn-group').forEach(function(group) {
-      const field = group.dataset.field;
-      group.querySelectorAll('.choice-btn').forEach(function(btn) {
+    document.querySelectorAll('.question-block').forEach(function(block) {
+      const qid = block.dataset.q;
+      block.querySelectorAll('.choice-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
-          group.querySelectorAll('.choice-btn').forEach(function(b) { b.classList.remove('selected'); });
+          block.querySelectorAll('.choice-btn').forEach(function(b) { b.classList.remove('selected'); });
           btn.classList.add('selected');
-          answers[field] = btn.dataset.value;
+          answers[qid] = parseInt(btn.dataset.score, 10);
         });
       });
     });
 
-    function demandStatus(data) {
-      if (data.chinaReadiness === 'low' && data.chinaDemand === 'high') {
-        return { icon: '🔴', signal: 'Strong city demand, weak readiness — you are leaving inbound on the table.' };
-      }
-      if (data.chinaReadiness === 'low' && data.chinaDemand === 'medium') {
-        return { icon: '🟡', signal: 'Demand is building but your operation is not yet set up to capture it.' };
-      }
-      if (data.chinaReadiness === 'low' && data.chinaDemand === 'low') {
-        return { icon: '🟢', signal: 'Low demand locally — China investment can wait; revisit in 12 months.' };
-      }
-      if (data.chinaReadiness === 'not_assessed' || data.chinaDemand === 'not_assessed') {
-        return { icon: '🟡', signal: 'Not yet assessed — run ChinaCheck for a precise readiness read.' };
-      }
-      return { icon: '🟢', signal: 'Readiness and local demand are aligned — maintain channels and operations.' };
+    function dimensionScore(dim) {
+      const scores = dim.questionIds.map(function(id) { return answers[id]; });
+      if (scores.some(function(s) { return s === undefined; })) return null;
+      const sum = scores.reduce(function(a, b) { return a + b; }, 0);
+      return Math.round(sum / (2 * dim.questionIds.length) * 100);
     }
 
-    function distributionStatus(data) {
-      if (data.distCost === 'over25') {
-        return { icon: '🔴', signal: 'Blended distribution cost above 25% — margin is leaking faster than it should.' };
-      }
-      if (data.distCost === '18-25') {
-        return { icon: '🟡', signal: 'Distribution cost in the warning range — direct channel economics need attention.' };
-      }
-      if (data.distCost === 'under18') {
-        return { icon: '🟢', signal: 'Distribution cost is commercially healthy at portfolio level.' };
-      }
-      return { icon: '🟡', signal: 'Not yet assessed — use the Distribution Cost Analyser for a true-cost read.' };
+    function bandFor(score) {
+      if (score >= 67) return { label: 'Strong', cls: 'strong' };
+      if (score >= 34) return { label: 'Some gap', cls: 'gap' };
+      return { label: 'Weak', cls: 'weak' };
     }
 
-    function repeatStatus(data) {
-      if (data.repeatShare === 'over60') {
-        return { icon: '🔴', signal: 'Most repeat guests rebook via OTA — commission on revenue that should be free.' };
-      }
-      if (data.repeatShare === '30-60') {
-        return { icon: '🟡', signal: 'A meaningful share of repeat guests still books via OTA.' };
-      }
-      if (data.repeatShare === 'under30') {
-        return { icon: '🟢', signal: 'Repeat guests are largely booking direct — protect that behaviour.' };
-      }
-      return { icon: '🟡', signal: 'Not yet assessed — estimate repeat OTA share with Repeat Guest Value.' };
-    }
-
-    function profitabilityStatus(data) {
-      if (data.unitGap === 'over25') {
-        return { icon: '🔴', signal: 'Worst unit is more than 25% below portfolio average — portfolio average is masking pain.' };
-      }
-      if (data.unitGap === '10-25') {
-        return { icon: '🟡', signal: 'Unit-level spread is widening — visibility before scale matters.' };
-      }
-      if (data.unitGap === 'within10') {
-        return { icon: '🟢', signal: 'Units are performing within a tight band around portfolio average.' };
-      }
-      return { icon: '🟡', signal: 'Not yet assessed — run Contribution Margin Analyser at unit level.' };
-    }
-
-    function isEverythingGreen(data) {
-      const demand = demandStatus(data);
-      const dist = distributionStatus(data);
-      const repeat = repeatStatus(data);
-      const unit = profitabilityStatus(data);
-      return demand.icon === '🟢' && dist.icon === '🟢' && repeat.icon === '🟢' && unit.icon === '🟢';
-    }
-
-    function buildPriorities(data) {
-      const items = [];
-
-      if (data.distCost === 'over25') {
-        items.push({
-          rank: 1,
-          weight: 100,
-          label: 'Your distribution cost is above 25% — this is your fastest margin fix.',
-          lookFirst: 'Start with your channel mix and hidden costs — payment fees, support time, and marketing load on direct.',
-          tool: 'distribution'
-        });
-      }
-
-      if (data.repeatShare === 'over60') {
-        items.push({
-          rank: data.distCost === 'over25' ? 2 : 1,
-          weight: data.distCost === 'over25' ? 90 : 95,
-          label: 'More than 60% of your repeat guests are rebooking via OTA — you are paying commission on revenue that should cost you nothing.',
-          lookFirst: 'Identify how repeat guests find you again and where direct rebooking breaks down.',
-          tool: 'repeat'
-        });
-      }
-
-      if (data.unitGap === 'over25') {
-        items.push({
-          rank: 2,
-          weight: 80,
-          label: 'Your weakest unit is dragging your portfolio average — you need unit-level visibility before you can fix it.',
-          lookFirst: data.knowsWorstUnit === 'no'
-            ? 'You do not yet know your weakest unit — build unit-level margin visibility first.'
-            : 'Compare fixed costs, occupancy, and rate strategy on your weakest unit against portfolio average.',
-          tool: 'margin'
-        });
-      }
-
-      if (data.distCost === '18-25' && (data.directCheaper === 'no' || data.directCheaper === 'same')) {
-        items.push({
-          rank: items.some(function(i) { return i.rank === 1; }) ? 3 : 2,
-          weight: 70,
-          label: 'Your distribution cost is in the warning range and your direct channel is not pulling its weight.',
-          lookFirst: 'Audit true direct cost versus your best OTA — incentives, ads, and engine fees included.',
-          tool: 'distribution'
-        });
-      }
-
-      if (data.chinaReadiness === 'low' && data.chinaDemand === 'high') {
-        items.push({
-          rank: items.length >= 2 ? 3 : 2,
-          weight: 60,
-          label: 'Your city has strong Chinese inbound demand but your operation is not set up to capture it.',
-          lookFirst: 'Map payment, content, and channel readiness before committing budget to China inbound.',
-          tool: 'china'
-        });
-      }
-
-      if (data.chinaReadiness === 'low' && data.chinaDemand === 'low') {
-        items.push({
-          rank: 3,
-          weight: 15,
-          label: 'China readiness is low but demand in your city does not yet justify the investment — revisit in 12 months.',
-          lookFirst: 'Monitor local Chinese inbound trends quarterly rather than investing now.',
-          tool: 'china'
-        });
-      }
-
-      items.sort(function(a, b) {
-        if (a.rank !== b.rank) return a.rank - b.rank;
-        return b.weight - a.weight;
+    function rankDimensions(results) {
+      return results.slice().sort(function(a, b) {
+        if (a.score !== b.score) return a.score - b.score;
+        return a.funnelOrder - b.funnelOrder;
       });
-
-      const seen = new Set();
-      const unique = [];
-      items.forEach(function(item) {
-        const key = item.label;
-        if (!seen.has(key)) {
-          seen.add(key);
-          unique.push(item);
-        }
-      });
-
-      return unique.slice(0, 3);
     }
 
-    function renderPriorities(data) {
-      const container = document.getElementById('priority-list');
-
-      if (isEverythingGreen(data)) {
-        container.innerHTML = '<div class="healthy-message">Your operation looks commercially healthy across all four dimensions. The next step is building the systems that keep it that way as you scale.</div>';
-        return;
+    function nextToolDimension(ranked, skipIds) {
+      const skip = new Set(skipIds || []);
+      for (let i = 0; i < ranked.length; i++) {
+        if (skip.has(ranked[i].id)) continue;
+        if (ranked[i].tool) return ranked[i];
       }
+      return null;
+    }
 
-      const priorities = buildPriorities(data);
-
-      if (!priorities.length) {
-        container.innerHTML = '<div class="healthy-message">No critical flags from your inputs. Review the snapshot below and use the individual tools for a deeper read.</div>';
-        return;
-      }
-
-      container.innerHTML = priorities.map(function(item, index) {
-        const tool = TOOLS[item.tool];
+    function buildRouteCard(priorityLabel, dim, altDim) {
+      if (dim.tool) {
         return (
-          '<article class="priority-card">' +
-            '<div class="priority-num">Priority ' + (index + 1) + '</div>' +
-            '<div class="priority-label">' + item.label + '</div>' +
-            '<div class="priority-look">' + item.lookFirst + '</div>' +
-            '<a class="priority-tool" href="' + tool.url + '" target="_blank" rel="noopener noreferrer">Open ' + tool.name + ' →</a>' +
+          '<article class="route-card">' +
+            '<div class="route-priority">' + priorityLabel + '</div>' +
+            '<div class="route-title">' + dim.name + '</div>' +
+            '<p class="route-text">Run the deep-dive tool for this dimension next. It will take you further than this brief can.</p>' +
+            '<a class="route-link" href="' + dim.tool.url + '" target="_blank" rel="noopener noreferrer">Open ' + dim.tool.name + ' →</a>' +
           '</article>'
         );
-      }).join('');
-    }
+      }
 
-    function renderSnapshot(data) {
-      const rows = [
-        { dimension: 'Demand &amp; Markets', status: demandStatus(data) },
-        { dimension: 'Distribution Cost', status: distributionStatus(data) },
-        { dimension: 'Repeat Guest Value', status: repeatStatus(data) },
-        { dimension: 'Unit Profitability', status: profitabilityStatus(data) }
-      ];
+      const fallback = altDim;
+      let html = (
+        '<article class="route-card">' +
+          '<div class="route-priority">' + priorityLabel + '</div>' +
+          '<div class="route-title">' + dim.name + '</div>' +
+          '<p class="route-note">The dedicated tool for guest experience is in development.</p>'
+      );
 
-      document.getElementById('snapshot-body').innerHTML = rows.map(function(row) {
-        return (
-          '<tr>' +
-            '<td><strong>' + row.dimension + '</strong></td>' +
-            '<td class="status-cell">' + row.status.icon + '</td>' +
-            '<td>' + row.status.signal + '</td>' +
-          '</tr>'
+      if (fallback && fallback.tool) {
+        html += (
+          '<p class="route-text">For now, start with ' + fallback.name + ', the next weakest dimension where a deep-dive tool is available.</p>' +
+          '<a class="route-link" href="' + fallback.tool.url + '" target="_blank" rel="noopener noreferrer">Open ' + fallback.tool.name + ' →</a>'
         );
-      }).join('');
+      } else {
+        html += '<p class="route-text">Review the dimension scores above and use the suite hub to choose your next step.</p>';
+      }
+
+      html += '</article>';
+      return html;
     }
 
-    function sendWebhook(data, capture) {
-      if (!WEBHOOK_URL || WEBHOOK_URL === 'YOUR_WEBHOOK_URL_HERE') return;
-
-      const payload = Object.assign({}, data, capture, {
-        submittedAt: new Date().toISOString(),
-        page: 'operator-diagnostic'
+    function renderOutput() {
+      const results = DIMENSIONS.map(function(dim) {
+        const score = dimensionScore(dim);
+        const band = bandFor(score);
+        return {
+          id: dim.id,
+          name: dim.name,
+          funnelOrder: dim.funnelOrder,
+          score: score,
+          band: band,
+          tool: dim.tool,
+          constraint: dim.constraint
+        };
       });
 
-      fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-        mode: 'no-cors'
-      }).catch(function() {});
-    }
+      if (results.some(function(r) { return r.score === null; })) {
+        alert('Please answer every question before continuing.');
+        return;
+      }
 
-    function showOutput() {
+      const ranked = rankDimensions(results);
+      const primary = ranked[0];
+      const secondary = ranked[1];
+      const showSecondary = secondary && secondary.score <= 66;
+
+      let standHtml = '';
+      ranked.slice().sort(function(a, b) { return a.funnelOrder - b.funnelOrder; }).forEach(function(r) {
+        standHtml += (
+          '<div class="dim-row">' +
+            '<div class="dim-name">' + r.name + '</div>' +
+            '<div class="dim-bar-track"><div class="dim-bar-fill ' + r.band.cls + '" style="width:' + r.score + '%"></div></div>' +
+            '<div class="dim-meta"><strong>' + r.score + '</strong>' + r.band.label + '</div>' +
+          '</div>'
+        );
+      });
+      document.getElementById('block-stand').innerHTML = standHtml;
+
+      let constrainedHtml = (
+        '<div class="constraint-card">' +
+          '<div class="constraint-label">Primary constraint</div>' +
+          '<div class="constraint-title">' + primary.name + ' (' + primary.band.label + ', ' + primary.score + '/100)</div>' +
+          '<p class="constraint-text">' + primary.constraint + '</p>' +
+        '</div>'
+      );
+
+      if (showSecondary) {
+        constrainedHtml += (
+          '<div class="constraint-card">' +
+            '<div class="constraint-label">Secondary constraint</div>' +
+            '<div class="constraint-title">' + secondary.name + ' (' + secondary.band.label + ', ' + secondary.score + '/100)</div>' +
+            '<p class="constraint-text">' + secondary.constraint + '</p>' +
+          '</div>'
+        );
+      }
+
+      document.getElementById('block-constrained').innerHTML = constrainedHtml;
+
+      const usedForFallback = [];
+      let investHtml = buildRouteCard('Start here', primary, nextToolDimension(ranked, [primary.id]));
+      usedForFallback.push(primary.id);
+
+      if (showSecondary) {
+        const alt = nextToolDimension(ranked, usedForFallback.concat([secondary.id]));
+        investHtml += buildRouteCard('Then look at', secondary, alt);
+      }
+
+      document.getElementById('block-invest').innerHTML = investHtml;
+
       document.getElementById('input-state').classList.add('hidden');
       document.getElementById('output-state').classList.remove('hidden');
-      document.getElementById('hero-title').textContent = 'Your operator diagnostic';
-      document.getElementById('hero-subtitle').textContent = 'Ranked priorities and a four-dimension snapshot based on your inputs.';
+      document.getElementById('hero-title').textContent = 'Your growth brief';
+      document.getElementById('hero-subtitle').textContent = 'A ranked read across six dimensions, with the deep-dive tools that match your weakest areas.';
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
       if (typeof gtag === 'function') {
-        gtag('event', 'generate_diagnostic', { event_category: 'operator_diagnostic' });
+        gtag('event', 'operator_diagnostic_completed', { event_category: 'operator_diagnostic' });
       }
     }
 
     function resetDiagnostic() {
-      Object.keys(answers).forEach(function(key) { answers[key] = null; });
+      Object.keys(answers).forEach(function(key) { delete answers[key]; });
       document.querySelectorAll('.choice-btn').forEach(function(btn) { btn.classList.remove('selected'); });
-      document.getElementById('diagnostic-form').reset();
       document.getElementById('output-state').classList.add('hidden');
       document.getElementById('input-state').classList.remove('hidden');
-      document.getElementById('hero-title').textContent = 'Where should you focus first?';
-      document.getElementById('hero-subtitle').textContent = 'Answer four short sections based on what you know about your operation. If you have already used the individual tools, use those outputs here. If not, use your best estimate — the diagnostic is still useful.';
+      document.getElementById('hero-title').textContent = 'Which tool should you run first?';
+      document.getElementById('hero-subtitle').textContent = 'You do not need to know the suite to use it. Answer a short set of questions across six commercial dimensions and this diagnostic will point you to the one or two deep-dive tools that matter most right now.';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     document.getElementById('diagnostic-form').addEventListener('submit', function(e) {
       e.preventDefault();
-
-      const capture = {
-        name: document.getElementById('capture-name').value.trim(),
-        email: document.getElementById('capture-email').value.trim(),
-        propertyCount: document.getElementById('capture-properties').value
-      };
-
-      sendWebhook(answers, capture);
-      renderPriorities(answers);
-      renderSnapshot(answers);
-      showOutput();
-    });
-
-    document.getElementById('print-btn').addEventListener('click', function() {
-      window.print();
+      renderOutput();
     });
 
     document.getElementById('restart-btn').addEventListener('click', resetDiagnostic);
