@@ -55,11 +55,16 @@
 
     a { text-decoration: none; color: inherit; }
 
+    .header-stack {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
     header {
       background: rgba(8,8,14,0.96);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      position: sticky; top: 0; z-index: 100;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
@@ -90,9 +95,41 @@
 
     .header-link:hover { background: rgba(255,255,255,0.15); }
 
+    .progress-strip {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .progress-track {
+      flex: 1;
+      height: 4px;
+      background: var(--border-light);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      border-radius: 20px;
+      transition: width 0.3s ease;
+    }
+
+    .progress-count {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
     .hero {
       background: linear-gradient(180deg, white 0%, var(--bg) 100%);
-      padding: 28px 20px 20px; text-align: center;
+      padding: 32px 20px 24px; text-align: center;
     }
 
     .hero-inner { max-width: 720px; margin: 0 auto; }
@@ -111,56 +148,114 @@
     }
 
     .hero-subtitle {
-      font-size: 14px; color: var(--muted);
-      line-height: 1.55; max-width: 640px; margin: 0 auto;
+      font-size: 15px; color: var(--muted);
+      line-height: 1.55; max-width: 520px; margin: 0 auto;
     }
 
-    main { max-width: 760px; margin: 0 auto; padding: 0 20px 28px; }
+    main { max-width: 760px; margin: 0 auto; padding: 0 20px 32px; }
 
     .panel {
-      background: var(--card); border-radius: var(--radius-md);
-      padding: 20px 22px; border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm); margin-bottom: 14px;
+      --dim-accent: var(--accent);
+      background: var(--card);
+      border-radius: var(--radius-md);
+      padding: 24px 26px;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--dim-accent);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 18px;
     }
+
+    .panel[data-dimension="ai-visibility"]       { --dim-accent: #0E8C86; }
+    .panel[data-dimension="demand"]              { --dim-accent: #2563A8; }
+    .panel[data-dimension="distribution-cost"]   { --dim-accent: #4C4B9E; }
+    .panel[data-dimension="unit-profitability"]  { --dim-accent: #B8801F; }
+    .panel[data-dimension="guest-experience"]    { --dim-accent: #B84C63; }
+    .panel[data-dimension="repeat-guest-value"]  { --dim-accent: #2E7D5B; }
 
     .section-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       font-size: 10px; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--accent); margin-bottom: 14px;
+      color: var(--accent);
+      margin-bottom: 18px;
     }
 
-    .question-block { margin-bottom: 18px; }
+    .dim-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--dim-accent);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .dim-icon {
+      width: 20px; height: 20px;
+      flex-shrink: 0;
+      color: var(--dim-accent);
+    }
+
+    .section-label-text { color: var(--accent); }
+
+    .question-block { margin-bottom: 24px; }
     .question-block:last-child { margin-bottom: 0; }
 
     .question-text {
-      font-size: 14px; font-weight: 600;
-      color: var(--ink); margin-bottom: 10px; line-height: 1.45;
+      font-size: 15px; font-weight: 600;
+      color: var(--ink); margin-bottom: 12px;
+      line-height: 1.5; margin-top: 4px;
     }
 
     .btn-group { display: flex; flex-wrap: wrap; gap: 8px; }
 
     .choice-btn {
       font-family: inherit; font-size: 12px; font-weight: 600;
-      color: var(--ink2); background: var(--bg);
-      border: 1px solid var(--border); border-radius: var(--radius-sm);
-      padding: 9px 12px; cursor: pointer;
-      transition: all 0.15s; line-height: 1.3; text-align: left;
+      color: var(--ink2); background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px; cursor: pointer;
+      transition: all 0.15s ease; line-height: 1.3; text-align: left;
     }
 
-    .choice-btn:hover { border-color: var(--accent); background: var(--accent-light); }
-    .choice-btn.selected { background: var(--accent); border-color: var(--accent); color: white; }
+    .choice-btn:hover {
+      background: #F5F5F7;
+      border-color: #C8C8D0;
+    }
+
+    .panel .choice-btn.selected {
+      background: var(--dim-accent);
+      border-color: var(--dim-accent);
+      color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      transform: translateY(-1px);
+    }
+
     .choice-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
     .submit-btn {
-      display: block; width: 100%; margin-top: 4px;
+      display: block; width: 100%; margin-top: 8px;
       font-family: inherit; font-size: 15px; font-weight: 700;
-      color: white; background: var(--accent);
+      color: var(--muted2); background: #E8E8ED;
       border: none; border-radius: var(--radius-sm);
       padding: 14px 18px; cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
+      transition: background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
     }
 
-    .submit-btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .submit-btn.ready {
+      color: white; background: var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .submit-btn.ready:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
 
     .output-section-title {
       font-size: 13px; font-weight: 700;
@@ -176,31 +271,38 @@
     .output-text:last-child { margin-bottom: 0; }
 
     .dim-row {
+      --dim-accent: var(--accent);
       display: grid;
       grid-template-columns: 140px 1fr 72px;
       gap: 10px; align-items: center;
-      padding: 10px 0;
+      padding: 12px 10px;
       border-bottom: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      transition: background 0.2s, box-shadow 0.2s;
     }
 
     .dim-row:last-child { border-bottom: none; }
 
+    .dim-row-primary {
+      background: rgba(27, 79, 114, 0.04);
+      box-shadow: inset 0 0 0 2px rgba(27, 79, 114, 0.15);
+      font-weight: 600;
+    }
+
     .dim-name { font-size: 13px; font-weight: 600; color: var(--ink); }
 
+    .dim-row-primary .dim-name { font-weight: 700; }
+
     .dim-bar-track {
-      height: 8px; background: var(--bg);
+      height: 10px; background: var(--bg);
       border-radius: 20px; overflow: hidden;
     }
 
     .dim-bar-fill {
       height: 100%; border-radius: 20px;
-      background: var(--accent);
+      background: var(--dim-accent);
       transition: width 0.4s ease;
     }
-
-    .dim-bar-fill.weak { background: var(--alert); }
-    .dim-bar-fill.gap { background: var(--warning); }
-    .dim-bar-fill.strong { background: var(--positive); }
 
     .dim-meta { text-align: right; font-size: 11px; color: var(--muted); }
     .dim-meta strong { display: block; font-size: 13px; color: var(--ink); }
@@ -295,37 +397,44 @@
     footer p + p { margin-top: 4px; }
 
     @media (max-width: 640px) {
-      .hero { padding: 20px 16px 16px; }
-      main { padding: 0 16px 24px; }
-      .panel { padding: 16px; }
+      .hero { padding: 24px 16px 20px; }
+      main { padding: 0 16px 28px; }
+      .panel { padding: 18px 16px; }
       .btn-group { flex-direction: column; }
       .choice-btn { width: 100%; }
-      .dim-row { grid-template-columns: 1fr; gap: 6px; }
+      .dim-row { grid-template-columns: 1fr; gap: 6px; padding: 10px 4px; }
       .dim-meta { text-align: left; }
+      .progress-strip { padding: 8px 16px; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <div class="brand">
-        <div class="brand-mark">OD</div>
-        <div class="brand-text">
-          <div class="brand-title">Operator Diagnostic</div>
-          <div class="brand-subtitle">Operator Intelligence Suite</div>
+  <div class="header-stack">
+    <header>
+      <div class="header-inner">
+        <div class="brand">
+          <div class="brand-mark">OD</div>
+          <div class="brand-text">
+            <div class="brand-title">Operator Diagnostic</div>
+            <div class="brand-subtitle">Operator Intelligence Suite</div>
+          </div>
         </div>
+        <a href="https://rbisschoff.github.io/operator-intelligence-suite/" class="header-link">Suite Hub</a>
       </div>
-      <a href="https://rbisschoff.github.io/operator-intelligence-suite/" class="header-link">Suite Hub</a>
+    </header>
+    <div class="progress-strip" id="progress-strip">
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      <span class="progress-count" id="progress-count">answered 0 of 13</span>
     </div>
-  </header>
+  </div>
 
   <section class="hero" id="hero">
     <div class="hero-inner">
       <div class="hero-eyebrow">Operator Series · Growth Brief</div>
       <h1 id="hero-title">Which tool should you run first?</h1>
       <p class="hero-subtitle" id="hero-subtitle">
-        You do not need to know the suite to use it. Answer a short set of questions across six commercial dimensions and this diagnostic will point you to the one or two deep-dive tools that matter most right now.
+        Two minutes, six questions, one clear answer on which tool to run first.
       </p>
     </div>
   </section>
@@ -334,7 +443,11 @@
     <div id="input-state">
       <form id="diagnostic-form" novalidate>
         <div class="panel" data-dimension="ai-visibility">
-          <div class="section-label">1. AI visibility</div>
+          <div class="section-label">
+            <span class="dim-badge">1</span>
+            <svg class="dim-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/><path d="M11 8v6M8 11h6"/></svg>
+            <span class="section-label-text">AI visibility</span>
+          </div>
           <div class="question-block" data-q="ai1">
             <div class="question-text">Does your direct-booking website allow AI crawlers, with no robots.txt block or firewall in the way?</div>
             <div class="btn-group">
@@ -354,7 +467,11 @@
         </div>
 
         <div class="panel" data-dimension="demand">
-          <div class="section-label">2. Demand</div>
+          <div class="section-label">
+            <span class="dim-badge">2</span>
+            <svg class="dim-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.8 3.8 6 3.8 9S14.5 18.2 12 21M12 3C9.5 5.8 8.2 9 8.2 12s1.3 6.2 3.8 9"/></svg>
+            <span class="section-label-text">Demand</span>
+          </div>
           <div class="question-block" data-q="dem1">
             <div class="question-text">Do you know which source markets actually drive your bookings?</div>
             <div class="btn-group">
@@ -374,7 +491,11 @@
         </div>
 
         <div class="panel" data-dimension="distribution-cost">
-          <div class="section-label">3. Distribution cost</div>
+          <div class="section-label">
+            <span class="dim-badge">3</span>
+            <svg class="dim-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M6 4v16M18 4v16M6 12h12"/><path d="M10 8l4 4-4 4"/></svg>
+            <span class="section-label-text">Distribution cost</span>
+          </div>
           <div class="question-block" data-q="dist1">
             <div class="question-text">Do you know your true blended cost of distribution, including the hidden costs, not only the headline OTA commission?</div>
             <div class="btn-group">
@@ -402,7 +523,11 @@
         </div>
 
         <div class="panel" data-dimension="unit-profitability">
-          <div class="section-label">4. Unit profitability</div>
+          <div class="section-label">
+            <span class="dim-badge">4</span>
+            <svg class="dim-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 18V8M9 18V5M14 18v-7M19 18V11"/></svg>
+            <span class="section-label-text">Unit profitability</span>
+          </div>
           <div class="question-block" data-q="unit1">
             <div class="question-text">Can you see profitability at the level of a single unit, not only the portfolio average?</div>
             <div class="btn-group">
@@ -422,7 +547,11 @@
         </div>
 
         <div class="panel" data-dimension="guest-experience">
-          <div class="section-label">5. Guest experience</div>
+          <div class="section-label">
+            <span class="dim-badge">5</span>
+            <svg class="dim-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.3L12 15.8 7.2 17.8l.9-5.3L4.2 8.7l5.4-.8L12 3z"/></svg>
+            <span class="section-label-text">Guest experience</span>
+          </div>
           <div class="question-block" data-q="gx1">
             <div class="question-text">Do you capture and act on guest feedback systematically, or only read reviews as they arrive?</div>
             <div class="btn-group">
@@ -442,7 +571,11 @@
         </div>
 
         <div class="panel" data-dimension="repeat-guest-value">
-          <div class="section-label">6. Repeat guest value</div>
+          <div class="section-label">
+            <span class="dim-badge">6</span>
+            <svg class="dim-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+            <span class="section-label-text">Repeat guest value</span>
+          </div>
           <div class="question-block" data-q="rep1">
             <div class="question-text">When guests return, do they mostly rebook direct, or come back through the OTA you already paid to acquire them?</div>
             <div class="btn-group">
@@ -461,7 +594,7 @@
           </div>
         </div>
 
-        <button type="submit" class="submit-btn">See my growth brief</button>
+        <button type="submit" class="submit-btn" id="submit-btn">See my growth brief</button>
       </form>
     </div>
 
@@ -498,10 +631,13 @@
   </footer>
 
   <script>
+    const TOTAL_QUESTIONS = 13;
+
     const DIMENSIONS = [
       {
         id: 'ai-visibility',
         name: 'AI visibility',
+        accent: '#0E8C86',
         funnelOrder: 1,
         questionIds: ['ai1', 'ai2'],
         tool: { name: 'AI-Ready Audit', url: 'https://rbisschoff.github.io/ai-ready-audit/' },
@@ -510,6 +646,7 @@
       {
         id: 'demand',
         name: 'Demand',
+        accent: '#2563A8',
         funnelOrder: 2,
         questionIds: ['dem1', 'dem2'],
         tool: { name: 'ChinaCheck', url: 'https://rbisschoff.github.io/chinacheck/' },
@@ -518,6 +655,7 @@
       {
         id: 'distribution-cost',
         name: 'Distribution cost',
+        accent: '#4C4B9E',
         funnelOrder: 3,
         questionIds: ['dist1', 'dist2', 'dist3'],
         tool: { name: 'Distribution Cost Analyser', url: 'https://rbisschoff.github.io/distribution-cost-analyser/' },
@@ -526,6 +664,7 @@
       {
         id: 'unit-profitability',
         name: 'Unit profitability',
+        accent: '#B8801F',
         funnelOrder: 4,
         questionIds: ['unit1', 'unit2'],
         tool: { name: 'Contribution Margin Analyser', url: 'https://rbisschoff.github.io/contribution-margin-analyser/' },
@@ -534,6 +673,7 @@
       {
         id: 'guest-experience',
         name: 'Guest experience',
+        accent: '#B84C63',
         funnelOrder: 5,
         questionIds: ['gx1', 'gx2'],
         tool: null,
@@ -542,6 +682,7 @@
       {
         id: 'repeat-guest-value',
         name: 'Repeat guest value',
+        accent: '#2E7D5B',
         funnelOrder: 6,
         questionIds: ['rep1', 'rep2'],
         tool: { name: 'Repeat Guest Value', url: 'https://rbisschoff.github.io/repeat-guest-value/' },
@@ -551,6 +692,14 @@
 
     const answers = {};
 
+    function updateProgress() {
+      const count = Object.keys(answers).length;
+      const pct = Math.round((count / TOTAL_QUESTIONS) * 100);
+      document.getElementById('progress-fill').style.width = pct + '%';
+      document.getElementById('progress-count').textContent = 'answered ' + count + ' of ' + TOTAL_QUESTIONS;
+      document.getElementById('submit-btn').classList.toggle('ready', count === TOTAL_QUESTIONS);
+    }
+
     document.querySelectorAll('.question-block').forEach(function(block) {
       const qid = block.dataset.q;
       block.querySelectorAll('.choice-btn').forEach(function(btn) {
@@ -558,13 +707,15 @@
           block.querySelectorAll('.choice-btn').forEach(function(b) { b.classList.remove('selected'); });
           btn.classList.add('selected');
           answers[qid] = parseInt(btn.dataset.score, 10);
+          updateProgress();
         });
       });
     });
 
     function dimensionScore(dim) {
-      const scores = dim.questionIds.map(function(id) { return answers[id]; });
-      if (scores.some(function(s) { return s === undefined; })) return null;
+      const scores = dim.questionIds.map(function(id) {
+        return answers[id] !== undefined ? answers[id] : 0;
+      });
       const sum = scores.reduce(function(a, b) { return a + b; }, 0);
       return Math.round(sum / (2 * dim.questionIds.length) * 100);
     }
@@ -631,6 +782,7 @@
         return {
           id: dim.id,
           name: dim.name,
+          accent: dim.accent,
           funnelOrder: dim.funnelOrder,
           score: score,
           band: band,
@@ -639,22 +791,18 @@
         };
       });
 
-      if (results.some(function(r) { return r.score === null; })) {
-        alert('Please answer every question before continuing.');
-        return;
-      }
-
       const ranked = rankDimensions(results);
       const primary = ranked[0];
       const secondary = ranked[1];
       const showSecondary = secondary && secondary.score <= 66;
 
       let standHtml = '';
-      ranked.slice().sort(function(a, b) { return a.funnelOrder - b.funnelOrder; }).forEach(function(r) {
+      results.slice().sort(function(a, b) { return a.funnelOrder - b.funnelOrder; }).forEach(function(r) {
+        const isPrimary = r.id === primary.id;
         standHtml += (
-          '<div class="dim-row">' +
-            '<div class="dim-name">' + r.name + '</div>' +
-            '<div class="dim-bar-track"><div class="dim-bar-fill ' + r.band.cls + '" style="width:' + r.score + '%"></div></div>' +
+          '<div class="dim-row' + (isPrimary ? ' dim-row-primary' : '') + '" style="--dim-accent:' + r.accent + '">' +
+            '<div class="dim-name">' + r.name + (isPrimary ? ' · primary constraint' : '') + '</div>' +
+            '<div class="dim-bar-track"><div class="dim-bar-fill" style="width:' + r.score + '%"></div></div>' +
             '<div class="dim-meta"><strong>' + r.score + '</strong>' + r.band.label + '</div>' +
           '</div>'
         );
@@ -694,6 +842,7 @@
 
       document.getElementById('input-state').classList.add('hidden');
       document.getElementById('output-state').classList.remove('hidden');
+      document.getElementById('progress-strip').classList.add('hidden');
       document.getElementById('hero-title').textContent = 'Your growth brief';
       document.getElementById('hero-subtitle').textContent = 'A ranked read across six dimensions, with the deep-dive tools that match your weakest areas.';
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -708,8 +857,10 @@
       document.querySelectorAll('.choice-btn').forEach(function(btn) { btn.classList.remove('selected'); });
       document.getElementById('output-state').classList.add('hidden');
       document.getElementById('input-state').classList.remove('hidden');
+      document.getElementById('progress-strip').classList.remove('hidden');
       document.getElementById('hero-title').textContent = 'Which tool should you run first?';
-      document.getElementById('hero-subtitle').textContent = 'You do not need to know the suite to use it. Answer a short set of questions across six commercial dimensions and this diagnostic will point you to the one or two deep-dive tools that matter most right now.';
+      document.getElementById('hero-subtitle').textContent = 'Two minutes, six questions, one clear answer on which tool to run first.';
+      updateProgress();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -719,6 +870,8 @@
     });
 
     document.getElementById('restart-btn').addEventListener('click', resetDiagnostic);
+
+    updateProgress();
   </script>
 </body>
 </html>
