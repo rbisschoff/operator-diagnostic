@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Operator Diagnostic — Operator Intelligence Suite</title>
   <meta name="description" content="Six-dimension commercial diagnostic for hospitality and short-term rental operators. Find which deep-dive tool to use first.">
 
@@ -53,6 +53,7 @@
       color: var(--ink);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
     }
 
     a { text-decoration: none; color: inherit; }
@@ -469,13 +470,52 @@
 
     @media (max-width: 640px) {
       .hero { padding: 24px 16px 20px; }
-      main { padding: 0 16px 28px; }
+      main { padding: 0 16px 28px; padding-bottom: calc(28px + env(safe-area-inset-bottom)); }
       .panel { padding: 18px 16px; }
       .btn-group { flex-direction: column; }
-      .choice-btn { width: 100%; }
+      .choice-btn {
+        width: 100%;
+        min-height: 48px;
+        font-size: 15px;
+        padding: 14px 16px;
+        box-sizing: border-box;
+      }
       .dim-row { grid-template-columns: 1fr; gap: 6px; padding: 10px 4px; }
       .dim-meta { text-align: left; }
       .progress-strip { padding: 8px 16px; }
+      .brand-subtitle { display: none; }
+      .brand-title {
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 38vw;
+      }
+      .header-inner {
+        padding: 10px 12px;
+        padding-top: calc(10px + env(safe-area-inset-top));
+      }
+      .lang-btn {
+        padding: 8px 9px;
+        min-height: 36px;
+        gap: 0;
+        font-size: 0;
+      }
+      .lang-flag { font-size: 15px; }
+      .header-link {
+        padding: 8px 10px;
+        font-size: 12px;
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+      }
+      .submit-btn, .secondary-btn, .route-link {
+        min-height: 48px;
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+      }
+      .route-card, .result-actions { width: 100%; }
     }
   </style>
 </head>
