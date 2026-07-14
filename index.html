@@ -22,25 +22,27 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
     :root {
-      --accent: #1B4F72;
-      --accent-dark: #0a2a3d;
-      --accent-light: #D6EAF8;
-      --alert: #C0392B;
-      --positive: #1E8449;
-      --warning: #F39C12;
-      --ink: #0A0A0F;
-      --ink2: #2C2C3A;
-      --muted: #7A7A8C;
-      --muted2: #ADADBE;
+      --accent: #007AFF;
+      --accent-dark: #0051D5;
+      --accent-light: rgba(0, 122, 255, 0.12);
+      --accent-secondary: #5856D6;
+      --alert: #FF3B30;
+      --positive: #34C759;
+      --warning: #FF9500;
+      --ink: #1C1C1E;
+      --ink2: #3A3A3C;
+      --muted: #8E8E93;
+      --muted2: #AEAEB2;
       --bg: #F2F2F7;
       --card: #FFFFFF;
-      --border: #E5E5EA;
-      --border-light: #F0F0F4;
-      --radius-lg: 16px;
-      --radius-md: 12px;
-      --radius-sm: 10px;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --border: rgba(60, 60, 67, 0.12);
+      --border-light: rgba(60, 60, 67, 0.08);
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.06);
+      --shadow-card: 0 2px 16px rgba(0,0,0,0.06);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -77,8 +79,9 @@
 
     .brand-mark {
       width: 30px; height: 30px; background: var(--accent);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
       color: white; font-weight: 700; font-size: 13px; flex-shrink: 0;
+      box-shadow: 0 2px 10px rgba(0, 122, 255, 0.35);
     }
 
     .brand-text { color: white; }
@@ -96,8 +99,9 @@
     .header-link:hover { background: rgba(255,255,255,0.15); }
 
     .progress-strip {
-      background: white;
-      border-bottom: 1px solid var(--border);
+      background: var(--card);
+      border-bottom: none;
+      box-shadow: var(--shadow-sm);
       padding: 8px 20px;
       display: flex;
       align-items: center;
@@ -157,11 +161,10 @@
     .panel {
       --dim-accent: var(--accent);
       background: var(--card);
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
       padding: 24px 26px;
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--dim-accent);
-      box-shadow: var(--shadow-sm);
+      border: none;
+      box-shadow: var(--shadow-card);
       margin-bottom: 18px;
     }
 
@@ -216,23 +219,23 @@
 
     .choice-btn {
       font-family: inherit; font-size: 12px; font-weight: 600;
-      color: var(--ink2); background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 10px 14px; cursor: pointer;
+      color: var(--ink2); background: var(--bg);
+      border: none;
+      border-radius: 999px;
+      padding: 10px 16px; cursor: pointer;
+      box-shadow: var(--shadow-sm);
       transition: all 0.15s ease; line-height: 1.3; text-align: left;
     }
 
     .choice-btn:hover {
-      background: #F5F5F7;
-      border-color: #C8C8D0;
+      background: var(--accent-light);
+      color: var(--accent-dark);
     }
 
     .panel .choice-btn.selected {
       background: var(--dim-accent);
-      border-color: var(--dim-accent);
       color: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      box-shadow: var(--shadow-sm);
       transform: translateY(-1px);
     }
 
@@ -241,15 +244,16 @@
     .submit-btn {
       display: block; width: 100%; margin-top: 8px;
       font-family: inherit; font-size: 15px; font-weight: 700;
-      color: var(--muted2); background: #E8E8ED;
-      border: none; border-radius: var(--radius-sm);
+      color: var(--muted2); background: var(--card);
+      border: none; border-radius: 999px;
       padding: 14px 18px; cursor: pointer;
+      box-shadow: var(--shadow-card);
       transition: background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
     }
 
     .submit-btn.ready {
       color: white; background: var(--accent);
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-md);
     }
 
     .submit-btn.ready:hover {
@@ -284,8 +288,8 @@
     .dim-row:last-child { border-bottom: none; }
 
     .dim-row-primary {
-      background: rgba(27, 79, 114, 0.04);
-      box-shadow: inset 0 0 0 2px rgba(27, 79, 114, 0.15);
+      background: var(--accent-light);
+      box-shadow: inset 0 0 0 2px rgba(0, 122, 255, 0.18);
       font-weight: 600;
     }
 
@@ -309,9 +313,10 @@
 
     .constraint-card {
       background: var(--bg);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-sm);
+      border: none;
+      border-radius: var(--radius-md);
       padding: 14px 16px; margin-bottom: 10px;
+      box-shadow: var(--shadow-sm);
     }
 
     .constraint-card:last-child { margin-bottom: 0; }
@@ -330,17 +335,12 @@
     .constraint-text { font-size: 13px; color: var(--ink2); line-height: 1.55; }
 
     .route-card {
-      background: var(--card);
-      border: 1px solid var(--border);
+      background: var(--bg);
+      border: none;
       border-radius: var(--radius-md);
       padding: 16px 18px; margin-bottom: 10px;
       position: relative; overflow: hidden;
-    }
-
-    .route-card::before {
-      content: ''; position: absolute;
-      top: 0; left: 0; right: 0; height: 2px;
-      background: var(--accent); opacity: 0.85;
+      box-shadow: var(--shadow-card);
     }
 
     .route-card:last-child { margin-bottom: 0; }
@@ -362,10 +362,39 @@
     }
 
     .route-link {
-      font-size: 12px; font-weight: 600; color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      padding: 10px 16px;
+      border-radius: 100px;
+      margin-top: 4px;
+      transition: background 0.2s;
     }
 
-    .route-link:hover { text-decoration: underline; }
+    .route-link:hover { background: var(--accent-dark); text-decoration: none; }
+
+    .route-potential {
+      font-size: 13px;
+      color: var(--ink2);
+      line-height: 1.55;
+      margin-bottom: 12px;
+      padding: 10px 12px;
+      background: var(--accent-light);
+      border-radius: var(--radius-sm);
+    }
+
+    .route-potential strong {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
 
     .route-note {
       font-size: 12px; color: var(--muted);
@@ -374,14 +403,15 @@
 
     .secondary-btn {
       font-family: inherit; font-size: 13px; font-weight: 600;
-      color: var(--accent); background: white;
-      border: 1px solid var(--accent);
-      border-radius: var(--radius-sm);
-      padding: 10px 16px; cursor: pointer;
+      color: var(--accent); background: var(--accent-light);
+      border: none;
+      border-radius: 999px;
+      padding: 10px 18px; cursor: pointer;
+      box-shadow: var(--shadow-sm);
       transition: all 0.2s;
     }
 
-    .secondary-btn:hover { background: var(--accent-light); }
+    .secondary-btn:hover { background: rgba(0, 122, 255, 0.18); }
 
     .hidden { display: none !important; }
 
@@ -434,7 +464,7 @@
       <div class="hero-eyebrow">Operator Series · Growth Brief</div>
       <h1 id="hero-title">Which tool should you run first?</h1>
       <p class="hero-subtitle" id="hero-subtitle">
-        Two minutes, six questions, one clear answer on which tool to run first.
+        Two minutes. Six dimensions. A ranked growth brief that points you to the deep dive that measures your biggest lost potential.
       </p>
     </div>
   </section>
@@ -610,7 +640,7 @@
       </section>
 
       <section class="panel">
-        <div class="output-section-title">Where to direct investment</div>
+        <div class="output-section-title">Where to go next</div>
         <div id="block-invest"></div>
       </section>
 
@@ -641,7 +671,8 @@
         funnelOrder: 1,
         questionIds: ['ai1', 'ai2'],
         tool: { name: 'AI-Ready Audit', url: 'https://rbisschoff.github.io/ai-ready-audit/' },
-        constraint: 'If assistants cannot read or recommend your direct site, downstream distribution work has less to land on.'
+        constraint: 'If assistants cannot read or recommend your direct site, downstream distribution work has less to land on.',
+        potential: 'See whether AI can find and recommend you, and whether it can book you. Spot the structural gaps that keep your direct site invisible to assistants.'
       },
       {
         id: 'demand',
@@ -650,7 +681,8 @@
         funnelOrder: 2,
         questionIds: ['dem1', 'dem2'],
         tool: { name: 'ChinaCheck', url: 'https://rbisschoff.github.io/chinacheck/' },
-        constraint: 'Without a clear read on source markets and inbound potential, channel spend is harder to justify.'
+        constraint: 'Without a clear read on source markets and inbound potential, channel spend is harder to justify.',
+        potential: 'Test readiness for China inbound before you commit budget. Property, channels, and operations scored against what that demand actually needs.'
       },
       {
         id: 'distribution-cost',
@@ -659,7 +691,8 @@
         funnelOrder: 3,
         questionIds: ['dist1', 'dist2', 'dist3'],
         tool: { name: 'Distribution Cost Analyser', url: 'https://rbisschoff.github.io/distribution-cost-analyser/' },
-        constraint: 'Margin leaks through the channel mix before you ever get to unit-level or repeat-guest economics.'
+        constraint: 'Margin leaks through the channel mix before you ever get to unit-level or repeat-guest economics.',
+        potential: 'Quantify the true cost of your channel mix, including hidden costs and OTA concentration risk, not only headline commission.'
       },
       {
         id: 'unit-profitability',
@@ -668,7 +701,8 @@
         funnelOrder: 4,
         questionIds: ['unit1', 'unit2'],
         tool: { name: 'Contribution Margin Analyser', url: 'https://rbisschoff.github.io/contribution-margin-analyser/' },
-        constraint: 'Portfolio averages can hide units that are quietly destroying value.'
+        constraint: 'Portfolio averages can hide units that are quietly destroying value.',
+        potential: 'Compare portfolio average vs single-unit contribution margin and surface units that look fine in averages but lose money on their own.'
       },
       {
         id: 'guest-experience',
@@ -677,7 +711,8 @@
         funnelOrder: 5,
         questionIds: ['gx1', 'gx2'],
         tool: null,
-        constraint: 'Weak feedback loops and unknown return rates make it harder to improve what guests actually experience.'
+        constraint: 'Weak feedback loops and unknown return rates make it harder to improve what guests actually experience.',
+        potential: 'A dedicated guest-experience deep dive is still in development.'
       },
       {
         id: 'repeat-guest-value',
@@ -686,7 +721,8 @@
         funnelOrder: 6,
         questionIds: ['rep1', 'rep2'],
         tool: { name: 'Repeat Guest Value', url: 'https://rbisschoff.github.io/repeat-guest-value/' },
-        constraint: 'Repeat guests rebooking via OTA turn free revenue into commission you have already paid for once.'
+        constraint: 'Repeat guests rebooking via OTA turn free revenue into commission you have already paid for once.',
+        potential: 'Estimate the revenue and commission trapped when return guests and B2B stays rebook via OTA instead of direct.'
       }
     ];
 
@@ -748,7 +784,8 @@
           '<article class="route-card">' +
             '<div class="route-priority">' + priorityLabel + '</div>' +
             '<div class="route-title">' + dim.name + '</div>' +
-            '<p class="route-text">Run the deep-dive tool for this dimension next. It will take you further than this brief can.</p>' +
+            '<div class="route-potential"><strong>What you stand to find</strong>' + (dim.potential || dim.constraint) + '</div>' +
+            '<p class="route-text">Run the deep dive next. It turns this triage read into a concrete measurement of the opportunity.</p>' +
             '<a class="route-link" href="' + dim.tool.url + '" target="_blank" rel="noopener noreferrer">Open ' + dim.tool.name + ' →</a>' +
           '</article>'
         );
@@ -764,7 +801,8 @@
 
       if (fallback && fallback.tool) {
         html += (
-          '<p class="route-text">For now, start with ' + fallback.name + ', the next weakest dimension where a deep-dive tool is available.</p>' +
+          '<div class="route-potential"><strong>What you stand to find instead</strong>' + (fallback.potential || fallback.constraint) + '</div>' +
+          '<p class="route-text">For now, start with ' + fallback.name + ', the next weakest dimension where a deep dive is available.</p>' +
           '<a class="route-link" href="' + fallback.tool.url + '" target="_blank" rel="noopener noreferrer">Open ' + fallback.tool.name + ' →</a>'
         );
       } else {
@@ -787,14 +825,15 @@
           score: score,
           band: band,
           tool: dim.tool,
-          constraint: dim.constraint
+          constraint: dim.constraint,
+          potential: dim.potential
         };
       });
 
       const ranked = rankDimensions(results);
       const primary = ranked[0];
       const secondary = ranked[1];
-      const showSecondary = secondary && secondary.score <= 66;
+      const showSecondary = !!secondary;
 
       let standHtml = '';
       results.slice().sort(function(a, b) { return a.funnelOrder - b.funnelOrder; }).forEach(function(r) {
@@ -844,7 +883,7 @@
       document.getElementById('output-state').classList.remove('hidden');
       document.getElementById('progress-strip').classList.add('hidden');
       document.getElementById('hero-title').textContent = 'Your growth brief';
-      document.getElementById('hero-subtitle').textContent = 'A ranked read across six dimensions, with the deep-dive tools that match your weakest areas.';
+      document.getElementById('hero-subtitle').textContent = 'Ranked gaps across six dimensions, with the deep dives that quantify what you are leaving on the table.';
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
       if (typeof gtag === 'function') {
@@ -859,7 +898,7 @@
       document.getElementById('input-state').classList.remove('hidden');
       document.getElementById('progress-strip').classList.remove('hidden');
       document.getElementById('hero-title').textContent = 'Which tool should you run first?';
-      document.getElementById('hero-subtitle').textContent = 'Two minutes, six questions, one clear answer on which tool to run first.';
+      document.getElementById('hero-subtitle').textContent = 'Two minutes. Six dimensions. A ranked growth brief that points you to the deep dive that measures your biggest lost potential.';
       updateProgress();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
