@@ -259,8 +259,13 @@
       border-radius: var(--radius-lg);
       padding: 24px 26px;
       border: none;
+      border-top: 4px solid var(--dim-accent);
       box-shadow: var(--shadow-card);
       margin-bottom: 18px;
+    }
+
+    .panel.panel-intro {
+      --dim-accent: var(--muted2, #8E8E93);
     }
 
     .panel[data-dimension="ai-visibility"]       { --dim-accent: #0E8C86; }
@@ -617,11 +622,9 @@
   <main>
     <div id="input-state">
       <form id="diagnostic-form" novalidate>
-        <div class="panel" data-dimension="ai-visibility">
+        <div class="panel panel-intro" data-dimension="portfolio-size">
           <div class="section-label">
-            <span class="dim-badge">1</span>
-            <svg class="dim-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/><path d="M11 8v6M8 11h6"/></svg>
-            <span class="section-label-text" data-i18n="secAi">AI visibility</span>
+            <span class="section-label-text" data-i18n="secPortfolio">About your portfolio</span>
           </div>
           <div class="question-block scale-block" data-q="scale">
             <div class="question-text" data-i18n="scale_q">Roughly how many units do you manage?</div>
@@ -632,8 +635,16 @@
               <button type="button" class="choice-btn" data-scale="large" data-i18n="scale_d">750+</button>
             </div>
           </div>
+        </div>
+
+        <div class="panel" data-dimension="ai-visibility">
+          <div class="section-label">
+            <span class="dim-badge">1</span>
+            <svg class="dim-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/><path d="M11 8v6M8 11h6"/></svg>
+            <span class="section-label-text" data-i18n="secAi">AI visibility</span>
+          </div>
           <div class="question-block" data-q="ai1">
-            <div class="question-text" data-i18n="ai1_q">Does your direct-booking website allow AI crawlers, with no robots.txt block or firewall in the way?</div>
+            <div class="question-text" data-i18n="ai1_q">Can AI tools like ChatGPT actually read your website properly, or could something technical be quietly blocking them?</div>
             <div class="btn-group">
               <button type="button" class="choice-btn" data-score="2" data-i18n="ai1_a">Yes</button>
               <button type="button" class="choice-btn" data-score="1" data-i18n="ai1_b">Not sure</button>
@@ -665,7 +676,7 @@
             </div>
           </div>
           <div class="question-block" data-q="dem2">
-            <div class="question-text" data-i18n="dem2_q">Are you actively developing a high-potential inbound market, or leaving that demand to the OTAs?</div>
+            <div class="question-text" data-i18n="dem2_q">Are you actively working to attract guests from a promising new market yourself, or leaving that job entirely to the OTAs?</div>
             <div class="btn-group">
               <button type="button" class="choice-btn" data-score="2" data-i18n="dem2_a">Actively developing</button>
               <button type="button" class="choice-btn" data-score="1" data-i18n="dem2_b">Considering it</button>
@@ -681,7 +692,7 @@
             <span class="section-label-text" data-i18n="secDist">Distribution cost</span>
           </div>
           <div class="question-block" data-q="dist1">
-            <div class="question-text" data-i18n="dist1_q">Do you know your true blended cost of distribution, including the hidden costs, not only the headline OTA commission?</div>
+            <div class="question-text" data-i18n="dist1_q">Do you know what each booking channel really costs you, once you include the hidden costs, not just the commission you see on the invoice?</div>
             <div class="btn-group">
               <button type="button" class="choice-btn" data-score="2" data-i18n="dist1_a">Yes</button>
               <button type="button" class="choice-btn" data-score="1" data-i18n="dist1_b">Roughly</button>
@@ -745,11 +756,11 @@
             </div>
           </div>
           <div class="question-block" data-q="gx2">
-            <div class="question-text" data-i18n="gx2_q">Do you know your return rate, the share of guests who come back?</div>
+            <div class="question-text" data-i18n="gx2_q">When something goes wrong during a stay, how quickly do guests usually hear back from you?</div>
             <div class="btn-group">
-              <button type="button" class="choice-btn" data-score="2" data-i18n="gx2_a">Yes</button>
-              <button type="button" class="choice-btn" data-score="1" data-i18n="gx2_b">Roughly</button>
-              <button type="button" class="choice-btn" data-score="0" data-i18n="gx2_c">No</button>
+              <button type="button" class="choice-btn" data-score="2" data-i18n="gx2_a">Same day</button>
+              <button type="button" class="choice-btn" data-score="1" data-i18n="gx2_b">Within a day or two</button>
+              <button type="button" class="choice-btn" data-score="0" data-i18n="gx2_c">Not sure</button>
             </div>
           </div>
         </div>
@@ -907,21 +918,22 @@
         scale_c: '201–750',
         scale_d: '750+',
         scaleInfluencedNote: 'Given the size of your portfolio, this is usually where operators at your stage feel it first.',
+        secPortfolio: 'About your portfolio',
         secAi: 'AI visibility',
         secDemand: 'Demand',
         secDist: 'Distribution cost',
         secUnit: 'Unit profitability',
         secGx: 'Guest experience',
         secRep: 'Repeat guest value',
-        ai1_q: 'Does your direct-booking website allow AI crawlers, with no robots.txt block or firewall in the way?',
+        ai1_q: 'Can AI tools like ChatGPT actually read your website properly, or could something technical be quietly blocking them?',
         ai1_a: 'Yes', ai1_b: 'Not sure', ai1_c: 'No',
         ai2_q: 'Is your property described in specific traveller terms (the neighbourhood, who it suits, the practical detail) rather than generic marketing language?',
         ai2_a: 'Yes, specific', ai2_b: 'Somewhat', ai2_c: 'No, generic',
         dem1_q: 'Do you know which source markets actually drive your bookings?',
         dem1_a: 'Yes, clearly', dem1_b: 'Roughly', dem1_c: 'No',
-        dem2_q: 'Are you actively developing a high-potential inbound market, or leaving that demand to the OTAs?',
+        dem2_q: 'Are you actively working to attract guests from a promising new market yourself, or leaving that job entirely to the OTAs?',
         dem2_a: 'Actively developing', dem2_b: 'Considering it', dem2_c: 'Leaving it to OTAs',
-        dist1_q: 'Do you know your true blended cost of distribution, including the hidden costs, not only the headline OTA commission?',
+        dist1_q: 'Do you know what each booking channel really costs you, once you include the hidden costs, not just the commission you see on the invoice?',
         dist1_a: 'Yes', dist1_b: 'Roughly', dist1_c: 'No',
         dist2_q: 'Is your direct channel cheaper for the guest than your best OTA rate?',
         dist2_a: 'Yes', dist2_b: 'About the same', dist2_c: 'No',
@@ -933,8 +945,8 @@
         unit2_a: 'Yes', unit2_b: 'Roughly', unit2_c: 'No',
         gx1_q: 'Do you capture and act on guest feedback systematically, or only read reviews as they arrive?',
         gx1_a: 'Systematically', gx1_b: 'Occasionally', gx1_c: 'Not really',
-        gx2_q: 'Do you know your return rate, the share of guests who come back?',
-        gx2_a: 'Yes', gx2_b: 'Roughly', gx2_c: 'No',
+        gx2_q: 'When something goes wrong during a stay, how quickly do guests usually hear back from you?',
+        gx2_a: 'Same day', gx2_b: 'Within a day or two', gx2_c: 'Not sure',
         rep1_q: 'When guests return, do they mostly rebook direct, or come back through the OTA you already paid to acquire them?',
         rep1_a: 'Mostly direct', rep1_b: 'Mixed', rep1_c: 'Mostly via OTA',
         rep2_q: 'Have you calculated the annual revenue and commission lost when repeat guests rebook through an OTA?',
@@ -997,21 +1009,22 @@
         scale_c: '201–750',
         scale_d: '750+',
         scaleInfluencedNote: 'Vista la dimensione del tuo portafoglio, è spesso qui che gli operatori al tuo stadio lo sentono per primi.',
+        secPortfolio: 'Il tuo portafoglio',
         secAi: 'Visibilità AI',
         secDemand: 'Domanda',
         secDist: 'Costo di distribuzione',
         secUnit: 'Redditività per unità',
         secGx: 'Esperienza ospite',
         secRep: 'Valore ospiti ripetuti',
-        ai1_q: 'Il tuo sito di prenotazione diretta consente ai crawler AI di accedere, senza blocchi robots.txt o firewall di mezzo?',
+        ai1_q: 'Strumenti come ChatGPT riescono davvero a leggere bene il tuo sito, o qualcosa di tecnico potrebbe bloccarli senza che tu lo sappia?',
         ai1_a: 'Sì', ai1_b: 'Non sono sicuro', ai1_c: 'No',
         ai2_q: 'La tua struttura è descritta con termini specifici da viaggiatore (il quartiere, a chi si adatta, i dettagli pratici) invece che con un linguaggio di marketing generico?',
         ai2_a: 'Sì, specifico', ai2_b: 'In parte', ai2_c: 'No, generico',
         dem1_q: 'Sai quali mercati di origine guidano davvero le tue prenotazioni?',
         dem1_a: 'Sì, chiaramente', dem1_b: 'Approssimativamente', dem1_c: 'No',
-        dem2_q: 'Stai sviluppando attivamente un mercato inbound ad alto potenziale, o lasci quella domanda alle OTA?',
+        dem2_q: 'Stai lavorando attivamente per attirare tu stesso ospiti da un mercato promettente, o lasci che se ne occupino del tutto le OTA?',
         dem2_a: 'Lo sto sviluppando attivamente', dem2_b: 'Ci sto pensando', dem2_c: 'Lo lascio alle OTA',
-        dist1_q: 'Conosci il tuo vero costo misto di distribuzione, inclusi i costi nascosti, non solo la commissione OTA dichiarata?',
+        dist1_q: 'Sai quanto ti costa davvero ogni canale di prenotazione, includendo i costi nascosti, non solo la commissione che vedi in fattura?',
         dist1_a: 'Sì', dist1_b: 'Approssimativamente', dist1_c: 'No',
         dist2_q: 'Il tuo canale diretto è più economico per l’ospite rispetto alla tua migliore tariffa OTA?',
         dist2_a: 'Sì', dist2_b: 'Più o meno lo stesso', dist2_c: 'No',
@@ -1023,8 +1036,8 @@
         unit2_a: 'Sì', unit2_b: 'Approssimativamente', unit2_c: 'No',
         gx1_q: 'Raccogli e agisci sul feedback degli ospiti in modo sistematico, o leggi solo le recensioni quando arrivano?',
         gx1_a: 'Sistematicamente', gx1_b: 'Occasionalmente', gx1_c: 'Non proprio',
-        gx2_q: 'Conosci il tuo tasso di ritorno, la quota di ospiti che tornano?',
-        gx2_a: 'Sì', gx2_b: 'Approssimativamente', gx2_c: 'No',
+        gx2_q: 'Quando qualcosa va storto durante un soggiorno, di solito quanto velocemente gli ospiti ricevono una risposta da te?',
+        gx2_a: 'Lo stesso giorno', gx2_b: 'Entro uno o due giorni', gx2_c: 'Non sono sicuro',
         rep1_q: 'Quando gli ospiti tornano, riprenotano principalmente in modo diretto, o passano dalla OTA che hai già pagato per acquisirli?',
         rep1_a: 'Principalmente diretto', rep1_b: 'Misto', rep1_c: 'Principalmente via OTA',
         rep2_q: 'Hai calcolato il ricavo annuale e la commissione persi quando gli ospiti ripetuti riprenotano tramite una OTA?',
@@ -1087,21 +1100,22 @@
         scale_c: '201–750',
         scale_d: '750+',
         scaleInfluencedNote: 'Angesichts der Größe Ihres Portfolios spüren Betreiber in Ihrer Phase das meist zuerst hier.',
+        secPortfolio: 'Ihr Portfolio',
         secAi: 'AI-Sichtbarkeit',
         secDemand: 'Nachfrage',
         secDist: 'Distributionskosten',
         secUnit: 'Unit-Profitabilität',
         secGx: 'Gasterlebnis',
         secRep: 'Wert wiederkehrender Gäste',
-        ai1_q: 'Erlaubt Ihre Direktbuchungs-Website AI-Crawlern den Zugriff, ohne robots.txt-Blockade oder Firewall im Weg?',
+        ai1_q: 'Können KI-Tools wie ChatGPT Ihre Website tatsächlich richtig lesen, oder blockiert sie möglicherweise etwas Technisches, ohne dass Sie es merken?',
         ai1_a: 'Ja', ai1_b: 'Nicht sicher', ai1_c: 'Nein',
         ai2_q: 'Wird Ihr Objekt in konkreten Reisenden-Begriffen beschrieben (die Nachbarschaft, für wen es passt, die praktischen Details) statt in generischer Marketingsprache?',
         ai2_a: 'Ja, konkret', ai2_b: 'Etwas', ai2_c: 'Nein, generisch',
         dem1_q: 'Wissen Sie, welche Quellmärkte Ihre Buchungen tatsächlich treiben?',
         dem1_a: 'Ja, klar', dem1_b: 'Ungefähr', dem1_c: 'Nein',
-        dem2_q: 'Entwickeln Sie aktiv einen Inbound-Markt mit hohem Potenzial, oder überlassen Sie diese Nachfrage den OTAs?',
+        dem2_q: 'Arbeiten Sie aktiv daran, Gäste aus einem vielversprechenden neuen Markt selbst anzuziehen, oder überlassen Sie das komplett den OTAs?',
         dem2_a: 'Aktiv in Entwicklung', dem2_b: 'Erwäge es', dem2_c: 'Überlasse es den OTAs',
-        dist1_q: 'Kennen Sie Ihre wahren gemischten Distributionskosten, inklusive der versteckten Kosten, nicht nur die genannte OTA-Provision?',
+        dist1_q: 'Wissen Sie, was jeder Buchungskanal Sie wirklich kostet, wenn man die versteckten Kosten einbezieht, nicht nur die Provision auf der Rechnung?',
         dist1_a: 'Ja', dist1_b: 'Ungefähr', dist1_c: 'Nein',
         dist2_q: 'Ist Ihr Direktkanal für den Gast günstiger als Ihre beste OTA-Rate?',
         dist2_a: 'Ja', dist2_b: 'Etwa gleich', dist2_c: 'Nein',
@@ -1113,8 +1127,8 @@
         unit2_a: 'Ja', unit2_b: 'Ungefähr', unit2_c: 'Nein',
         gx1_q: 'Erfassen Sie Gästefeedback systematisch und handeln danach, oder lesen Sie Bewertungen nur, wenn sie eintreffen?',
         gx1_a: 'Systematisch', gx1_b: 'Gelegentlich', gx1_c: 'Eigentlich nicht',
-        gx2_q: 'Kennen Sie Ihre Rückkehrquote, den Anteil der Gäste, die wiederkommen?',
-        gx2_a: 'Ja', gx2_b: 'Ungefähr', gx2_c: 'Nein',
+        gx2_q: 'Wenn während eines Aufenthalts etwas schiefgeht, wie schnell hören Gäste normalerweise von Ihnen?',
+        gx2_a: 'Am selben Tag', gx2_b: 'Innerhalb von ein bis zwei Tagen', gx2_c: 'Nicht sicher',
         rep1_q: 'Wenn Gäste wiederkommen, buchen sie meist direkt neu, oder kommen sie über die OTA zurück, die Sie schon einmal bezahlt haben, um sie zu gewinnen?',
         rep1_a: 'Meist direkt', rep1_b: 'Gemischt', rep1_c: 'Meist über OTA',
         rep2_q: 'Haben Sie den jährlichen Umsatz und die Provision berechnet, die verloren gehen, wenn Wiederholungsgäste über eine OTA neu buchen?',
