@@ -274,6 +274,7 @@
     .panel[data-dimension="unit-profitability"]  { --dim-accent: #B8801F; }
     .panel[data-dimension="guest-experience"]    { --dim-accent: #B84C63; }
     .panel[data-dimension="repeat-guest-value"]  { --dim-accent: #2E7D5B; }
+    .panel[data-dimension="owner-retention"]     { --dim-accent: #5C6F82; }
 
     .section-label {
       display: flex;
@@ -789,6 +790,30 @@
           </div>
         </div>
 
+        <div class="panel" data-dimension="owner-retention">
+          <div class="section-label">
+            <span class="dim-badge">7</span>
+            <svg class="dim-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="12" cy="9" r="3"/><path d="M12 12v9"/><path d="M8 21h8"/></svg>
+            <span class="section-label-text" data-i18n="secOwner">Owner retention</span>
+          </div>
+          <div class="question-block" data-q="own1">
+            <div class="question-text" data-i18n="own1_q">Do you know how many property owners you have lost to a different manager in the last 12 months?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2" data-i18n="own1_a">Yes</button>
+              <button type="button" class="choice-btn" data-score="1" data-i18n="own1_b">Roughly</button>
+              <button type="button" class="choice-btn" data-score="0" data-i18n="own1_c">No</button>
+            </div>
+          </div>
+          <div class="question-block" data-q="own2">
+            <div class="question-text" data-i18n="own2_q">Do you track whether you are actually delivering the revenue you promised owners at signing?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-score="2" data-i18n="own2_a">Yes</button>
+              <button type="button" class="choice-btn" data-score="1" data-i18n="own2_b">Roughly</button>
+              <button type="button" class="choice-btn" data-score="0" data-i18n="own2_c">No</button>
+            </div>
+          </div>
+        </div>
+
         <button type="submit" class="submit-btn" id="submit-btn" data-i18n="submitBtn">See my Growth Snapshot</button>
       </form>
     </div>
@@ -826,7 +851,7 @@
   </footer>
 
   <script>
-    const TOTAL_QUESTIONS = 14;
+    const TOTAL_QUESTIONS = 16;
     let currentLang = 'en';
 
     const DIMENSIONS = [
@@ -889,6 +914,16 @@
         tool: { name: 'Repeat Guest Value', url: 'https://rbisschoff.github.io/repeat-guest-value/' },
         constraint: 'Repeat guests rebooking via OTA turn free revenue into commission you have already paid for once.',
         potential: 'Estimate the revenue and commission trapped when return guests and B2B stays rebook via OTA instead of direct.'
+      },
+      {
+        id: 'owner-retention',
+        name: 'Owner retention',
+        accent: '#5C6F82',
+        funnelOrder: 7,
+        questionIds: ['own1', 'own2'],
+        tool: { name: 'Owner Retention Diagnostic', url: 'https://rbisschoff.github.io/owner-retention-diagnostic/' },
+        constraint: 'Owner churn costs you the property entirely, not just one booking, and it is usually invisible until it has already happened.',
+        potential: 'See how exposed your owner book actually is: churn rate, revenue delivered vs promised, and whether you are collecting any real owner satisfaction signal at all.'
       }
     ];
 
@@ -898,7 +933,8 @@
       'distribution-cost':  { name: 'dimDistName',   constraint: 'dimDistConstraint',   potential: 'dimDistPotential' },
       'unit-profitability': { name: 'dimUnitName',   constraint: 'dimUnitConstraint',   potential: 'dimUnitPotential' },
       'guest-experience':   { name: 'dimGxName',     constraint: 'dimGxConstraint',     potential: 'dimGxPotential' },
-      'repeat-guest-value': { name: 'dimRepName',    constraint: 'dimRepConstraint',    potential: 'dimRepPotential' }
+      'repeat-guest-value': { name: 'dimRepName',    constraint: 'dimRepConstraint',    potential: 'dimRepPotential' },
+      'owner-retention':    { name: 'dimOwnName',    constraint: 'dimOwnConstraint',    potential: 'dimOwnPotential' }
     };
 
     const I18N = {
@@ -925,6 +961,7 @@
         secUnit: 'Unit profitability',
         secGx: 'Guest experience',
         secRep: 'Repeat guest value',
+        secOwner: 'Owner retention',
         ai1_q: 'Can AI tools like ChatGPT actually read your website properly, or could something technical be quietly blocking them?',
         ai1_a: 'Yes', ai1_b: 'Not sure', ai1_c: 'No',
         ai2_q: 'Is your property described in specific traveller terms (the neighbourhood, who it suits, the practical detail) rather than generic marketing language?',
@@ -951,6 +988,10 @@
         rep1_a: 'Mostly direct', rep1_b: 'Mixed', rep1_c: 'Mostly via OTA',
         rep2_q: 'Have you calculated the annual revenue and commission lost when repeat guests rebook through an OTA?',
         rep2_a: 'Yes', rep2_b: 'No, but aware of it', rep2_c: 'Never considered it',
+        own1_q: 'Do you know how many property owners you have lost to a different manager in the last 12 months?',
+        own1_a: 'Yes', own1_b: 'Roughly', own1_c: 'No',
+        own2_q: 'Do you track whether you are actually delivering the revenue you promised owners at signing?',
+        own2_a: 'Yes', own2_b: 'Roughly', own2_c: 'No',
         submitBtn: 'See my Growth Snapshot',
         outStandTitle: 'Where you stand today',
         outConstrainedTitle: 'Where growth is constrained',
@@ -980,6 +1021,9 @@
         dimRepName: 'Repeat guest value',
         dimRepConstraint: 'Repeat guests rebooking via OTA turn free revenue into commission you have already paid for once.',
         dimRepPotential: 'Estimate the revenue and commission trapped when return guests and B2B stays rebook via OTA instead of direct.',
+        dimOwnName: 'Owner retention',
+        dimOwnConstraint: 'Owner churn costs you the property entirely, not just one booking, and it is usually invisible until it has already happened.',
+        dimOwnPotential: 'See how exposed your owner book actually is: churn rate, revenue delivered vs promised, and whether you are collecting any real owner satisfaction signal at all.',
         gxInDev: 'The dedicated tool for guest experience is in development.',
         constraintPrimary: 'Primary constraint',
         constraintSecondary: 'Secondary constraint',
@@ -1016,6 +1060,7 @@
         secUnit: 'Redditività per unità',
         secGx: 'Esperienza ospite',
         secRep: 'Valore ospiti ripetuti',
+        secOwner: 'Fidelizzazione proprietari',
         ai1_q: 'Strumenti come ChatGPT riescono davvero a leggere bene il tuo sito, o qualcosa di tecnico potrebbe bloccarli senza che tu lo sappia?',
         ai1_a: 'Sì', ai1_b: 'Non sono sicuro', ai1_c: 'No',
         ai2_q: 'La tua struttura è descritta con termini specifici da viaggiatore (il quartiere, a chi si adatta, i dettagli pratici) invece che con un linguaggio di marketing generico?',
@@ -1042,6 +1087,10 @@
         rep1_a: 'Principalmente diretto', rep1_b: 'Misto', rep1_c: 'Principalmente via OTA',
         rep2_q: 'Hai calcolato il ricavo annuale e la commissione persi quando gli ospiti ripetuti riprenotano tramite una OTA?',
         rep2_a: 'Sì', rep2_b: 'No, ma ne sono consapevole', rep2_c: 'Non ci ho mai pensato',
+        own1_q: 'Sai quanti proprietari hai perso verso un altro gestore negli ultimi 12 mesi?',
+        own1_a: 'Sì', own1_b: 'Approssimativamente', own1_c: 'No',
+        own2_q: 'Tieni traccia se stai davvero consegnando il ricavo che avevi promesso ai proprietari alla firma?',
+        own2_a: 'Sì', own2_b: 'Approssimativamente', own2_c: 'No',
         submitBtn: 'Vedi il mio Growth Snapshot',
         outStandTitle: 'Dove ti trovi oggi',
         outConstrainedTitle: 'Dove la crescita è vincolata',
@@ -1071,6 +1120,9 @@
         dimRepName: 'Valore ospiti ripetuti',
         dimRepConstraint: 'Gli ospiti ripetuti che riprenotano via OTA trasformano ricavo gratuito in una commissione che hai già pagato una volta.',
         dimRepPotential: 'Stima il ricavo e la commissione persi quando ospiti di ritorno e soggiorni B2B riprenotano via OTA invece che direttamente.',
+        dimOwnName: 'Fidelizzazione proprietari',
+        dimOwnConstraint: 'Il churn dei proprietari ti costa l\'intera proprietà, non solo una prenotazione, e di solito resta invisibile finché è già successo.',
+        dimOwnPotential: 'Vedi quanto è davvero esposto il tuo portafoglio proprietari: tasso di churn, ricavo consegnato rispetto a quello promesso, e se raccogli davvero un segnale di soddisfazione dei proprietari.',
         gxInDev: 'Lo strumento dedicato all’esperienza ospite è in sviluppo.',
         constraintPrimary: 'Vincolo primario',
         constraintSecondary: 'Vincolo secondario',
@@ -1107,6 +1159,7 @@
         secUnit: 'Unit-Profitabilität',
         secGx: 'Gasterlebnis',
         secRep: 'Wert wiederkehrender Gäste',
+        secOwner: 'Eigentümerbindung',
         ai1_q: 'Können KI-Tools wie ChatGPT Ihre Website tatsächlich richtig lesen, oder blockiert sie möglicherweise etwas Technisches, ohne dass Sie es merken?',
         ai1_a: 'Ja', ai1_b: 'Nicht sicher', ai1_c: 'Nein',
         ai2_q: 'Wird Ihr Objekt in konkreten Reisenden-Begriffen beschrieben (die Nachbarschaft, für wen es passt, die praktischen Details) statt in generischer Marketingsprache?',
@@ -1133,6 +1186,10 @@
         rep1_a: 'Meist direkt', rep1_b: 'Gemischt', rep1_c: 'Meist über OTA',
         rep2_q: 'Haben Sie den jährlichen Umsatz und die Provision berechnet, die verloren gehen, wenn Wiederholungsgäste über eine OTA neu buchen?',
         rep2_a: 'Ja', rep2_b: 'Nein, aber mir bewusst', rep2_c: 'Nie darüber nachgedacht',
+        own1_q: 'Wissen Sie, wie viele Eigentümer Sie in den letzten 12 Monaten an einen anderen Verwalter verloren haben?',
+        own1_a: 'Ja', own1_b: 'Ungefähr', own1_c: 'Nein',
+        own2_q: 'Verfolgen Sie, ob Sie tatsächlich den Umsatz liefern, den Sie Eigentümern bei Vertragsabschluss versprochen haben?',
+        own2_a: 'Ja', own2_b: 'Ungefähr', own2_c: 'Nein',
         submitBtn: 'Meinen Growth Snapshot ansehen',
         outStandTitle: 'Wo Sie heute stehen',
         outConstrainedTitle: 'Wo Wachstum gehemmt ist',
@@ -1162,6 +1219,9 @@
         dimRepName: 'Wert wiederkehrender Gäste',
         dimRepConstraint: 'Wiederkehrende Gäste, die über OTA neu buchen, verwandeln kostenlosen Umsatz in eine Provision, die Sie bereits einmal bezahlt haben.',
         dimRepPotential: 'Schätzen Sie Umsatz und Provision, die verloren gehen, wenn Rückkehrer und B2B-Aufenthalte über OTA statt direkt neu buchen.',
+        dimOwnName: 'Eigentümerbindung',
+        dimOwnConstraint: 'Eigentümer-Churn kostet Sie die gesamte Immobilie, nicht nur eine Buchung, und bleibt meist unsichtbar, bis er schon passiert ist.',
+        dimOwnPotential: 'Sehen Sie, wie exponiert Ihr Eigentümer-Buch wirklich ist: Churn-Rate, gelieferter vs. versprochener Umsatz, und ob Sie überhaupt ein echtes Zufriedenheitssignal der Eigentümer erheben.',
         gxInDev: 'Das dedizierte Tool für Gasterlebnis ist in Entwicklung.',
         constraintPrimary: 'Primärer Engpass',
         constraintSecondary: 'Sekundärer Engpass',
@@ -1239,8 +1299,8 @@
     const SCALE_WEIGHTS = {
       small: { 'demand': 1.15, 'distribution-cost': 1.15 },
       mid:   { 'unit-profitability': 1.15, 'repeat-guest-value': 1.10 },
-      wall:  { 'unit-profitability': 1.20, 'guest-experience': 1.10 },
-      large: { 'guest-experience': 1.15, 'repeat-guest-value': 1.15 }
+      wall:  { 'unit-profitability': 1.20, 'guest-experience': 1.10, 'owner-retention': 1.15 },
+      large: { 'guest-experience': 1.15, 'repeat-guest-value': 1.15, 'owner-retention': 1.20 }
     };
 
     function rankDimensions(results, scaleWeights) {
