@@ -496,6 +496,13 @@
       font-style: italic; margin-bottom: 8px; line-height: 1.5;
     }
 
+    .scale-note {
+      font-size: 13px;
+      color: var(--muted, #8E8E93);
+      margin-top: 8px;
+      font-style: italic;
+    }
+
     .secondary-btn {
       font-family: inherit; font-size: 13px; font-weight: 600;
       color: var(--accent); background: var(--accent-light);
@@ -615,6 +622,15 @@
             <span class="dim-badge">1</span>
             <svg class="dim-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/><path d="M11 8v6M8 11h6"/></svg>
             <span class="section-label-text" data-i18n="secAi">AI visibility</span>
+          </div>
+          <div class="question-block scale-block" data-q="scale">
+            <div class="question-text" data-i18n="scale_q">Roughly how many units do you manage?</div>
+            <div class="btn-group">
+              <button type="button" class="choice-btn" data-scale="small" data-i18n="scale_a">1–50</button>
+              <button type="button" class="choice-btn" data-scale="mid" data-i18n="scale_b">51–200</button>
+              <button type="button" class="choice-btn" data-scale="wall" data-i18n="scale_c">201–750</button>
+              <button type="button" class="choice-btn" data-scale="large" data-i18n="scale_d">750+</button>
+            </div>
           </div>
           <div class="question-block" data-q="ai1">
             <div class="question-text" data-i18n="ai1_q">Does your direct-booking website allow AI crawlers, with no robots.txt block or firewall in the way?</div>
@@ -799,7 +815,7 @@
   </footer>
 
   <script>
-    const TOTAL_QUESTIONS = 13;
+    const TOTAL_QUESTIONS = 14;
     let currentLang = 'en';
 
     const DIMENSIONS = [
@@ -849,9 +865,9 @@
         accent: '#B84C63',
         funnelOrder: 5,
         questionIds: ['gx1', 'gx2'],
-        tool: null,
+        tool: { name: 'Guest Experience Score', url: 'https://rbisschoff.github.io/guest-experience-score/' },
         constraint: 'Weak feedback loops and unknown return rates make it harder to improve what guests actually experience.',
-        potential: 'A dedicated guest-experience deep dive is still in development.'
+        potential: 'See whether your rating is hiding a listening gap. Score your review response rate, message speed, and issue rate against what a strong operator actually looks like.'
       },
       {
         id: 'repeat-guest-value',
@@ -885,6 +901,12 @@
         heroTitleOutput: 'Your growth brief',
         heroSubtitleOutput: 'Ranked gaps across six dimensions, with the deep dives that quantify what you are leaving on the table.',
         progressTemplate: 'answered {count} of {total}',
+        scale_q: 'Roughly how many units do you manage?',
+        scale_a: '1–50',
+        scale_b: '51–200',
+        scale_c: '201–750',
+        scale_d: '750+',
+        scaleInfluencedNote: 'Given the size of your portfolio, this is usually where operators at your stage feel it first.',
         secAi: 'AI visibility',
         secDemand: 'Demand',
         secDist: 'Distribution cost',
@@ -942,7 +964,7 @@
         dimUnitPotential: 'Compare portfolio average vs single-unit contribution margin and surface units that look fine in averages but lose money on their own.',
         dimGxName: 'Guest experience',
         dimGxConstraint: 'Weak feedback loops and unknown return rates make it harder to improve what guests actually experience.',
-        dimGxPotential: 'A dedicated guest-experience deep dive is still in development.',
+        dimGxPotential: 'See whether your rating is hiding a listening gap. Score your review response rate, message speed, and issue rate against what a strong operator actually looks like.',
         dimRepName: 'Repeat guest value',
         dimRepConstraint: 'Repeat guests rebooking via OTA turn free revenue into commission you have already paid for once.',
         dimRepPotential: 'Estimate the revenue and commission trapped when return guests and B2B stays rebook via OTA instead of direct.',
@@ -969,6 +991,12 @@
         heroTitleOutput: 'Il tuo growth brief',
         heroSubtitleOutput: 'Divari ordinati su sei dimensioni, con gli approfondimenti che quantificano ciò che stai lasciando sul tavolo.',
         progressTemplate: 'risposte {count} di {total}',
+        scale_q: 'Quante unità gestisci, all\'incirca?',
+        scale_a: '1–50',
+        scale_b: '51–200',
+        scale_c: '201–750',
+        scale_d: '750+',
+        scaleInfluencedNote: 'Vista la dimensione del tuo portafoglio, è spesso qui che gli operatori al tuo stadio lo sentono per primi.',
         secAi: 'Visibilità AI',
         secDemand: 'Domanda',
         secDist: 'Costo di distribuzione',
@@ -1026,7 +1054,7 @@
         dimUnitPotential: 'Confronta la media di portafoglio con il margine di contribuzione della singola unità e individua le unità che sembrano a posto nella media ma perdono denaro da sole.',
         dimGxName: 'Esperienza ospite',
         dimGxConstraint: 'Cicli di feedback debole e tassi di ritorno non noti rendono più difficile migliorare ciò che gli ospiti vivono davvero.',
-        dimGxPotential: 'Un approfondimento dedicato all’esperienza ospite è ancora in sviluppo.',
+        dimGxPotential: 'Scopri se il tuo rating nasconde un divario di ascolto. Confronta tasso di risposta alle recensioni, velocità dei messaggi e tasso di problemi con ciò che un operatore solido sembra davvero.',
         dimRepName: 'Valore ospiti ripetuti',
         dimRepConstraint: 'Gli ospiti ripetuti che riprenotano via OTA trasformano ricavo gratuito in una commissione che hai già pagato una volta.',
         dimRepPotential: 'Stima il ricavo e la commissione persi quando ospiti di ritorno e soggiorni B2B riprenotano via OTA invece che direttamente.',
@@ -1053,6 +1081,12 @@
         heroTitleOutput: 'Ihr Growth Brief',
         heroSubtitleOutput: 'Rangierte Lücken über sechs Dimensionen, mit den Deep Dives, die quantifizieren, was Sie auf dem Tisch liegen lassen.',
         progressTemplate: 'beantwortet {count} von {total}',
+        scale_q: 'Wie viele Units verwalten Sie ungefähr?',
+        scale_a: '1–50',
+        scale_b: '51–200',
+        scale_c: '201–750',
+        scale_d: '750+',
+        scaleInfluencedNote: 'Angesichts der Größe Ihres Portfolios spüren Betreiber in Ihrer Phase das meist zuerst hier.',
         secAi: 'AI-Sichtbarkeit',
         secDemand: 'Nachfrage',
         secDist: 'Distributionskosten',
@@ -1110,7 +1144,7 @@
         dimUnitPotential: 'Vergleichen Sie Portfolio-Durchschnitt mit dem Beitragsmargin einzelner Units und finden Sie Units, die im Durchschnitt gut aussehen, aber allein Geld verlieren.',
         dimGxName: 'Gasterlebnis',
         dimGxConstraint: 'Schwache Feedback-Schleifen und unbekannte Rückkehrquoten erschweren es, das tatsächliche Gästeerlebnis zu verbessern.',
-        dimGxPotential: 'Ein dedizierter Deep Dive zum Gasterlebnis ist noch in Entwicklung.',
+        dimGxPotential: 'Prüfen Sie, ob Ihre Bewertung eine Zuhör-Lücke verbirgt. Bewerten Sie Antwortquote auf Reviews, Nachrichtengeschwindigkeit und Problemquote gegen das, was ein starker Betreiber wirklich aussieht.',
         dimRepName: 'Wert wiederkehrender Gäste',
         dimRepConstraint: 'Wiederkehrende Gäste, die über OTA neu buchen, verwandeln kostenlosen Umsatz in eine Provision, die Sie bereits einmal bezahlt haben.',
         dimRepPotential: 'Schätzen Sie Umsatz und Provision, die verloren gehen, wenn Rückkehrer und B2B-Aufenthalte über OTA statt direkt neu buchen.',
@@ -1152,7 +1186,7 @@
       document.getElementById('submit-btn').classList.toggle('ready', count === TOTAL_QUESTIONS);
     }
 
-    document.querySelectorAll('.question-block').forEach(function(block) {
+    document.querySelectorAll('.question-block:not(.scale-block)').forEach(function(block) {
       const qid = block.dataset.q;
       block.querySelectorAll('.choice-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
@@ -1161,6 +1195,15 @@
           answers[qid] = parseInt(btn.dataset.score, 10);
           updateProgress();
         });
+      });
+    });
+
+    document.querySelectorAll('.scale-block .choice-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.scale-block .choice-btn').forEach(function(b) { b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        answers['scale'] = btn.dataset.scale;
+        updateProgress();
       });
     });
 
@@ -1179,9 +1222,20 @@
       return { label: pack.bandWeak, cls: 'weak' };
     }
 
-    function rankDimensions(results) {
+    const SCALE_WEIGHTS = {
+      small: { 'demand': 1.15, 'distribution-cost': 1.15 },
+      mid:   { 'unit-profitability': 1.15, 'repeat-guest-value': 1.10 },
+      wall:  { 'unit-profitability': 1.20, 'guest-experience': 1.10 },
+      large: { 'guest-experience': 1.15, 'repeat-guest-value': 1.15 }
+    };
+
+    function rankDimensions(results, scaleWeights) {
       return results.slice().sort(function(a, b) {
-        if (a.score !== b.score) return a.score - b.score;
+        const wA = (scaleWeights && scaleWeights[a.id]) || 1;
+        const wB = (scaleWeights && scaleWeights[b.id]) || 1;
+        const adjA = a.score / wA;
+        const adjB = b.score / wB;
+        if (adjA !== adjB) return adjA - adjB;
         return a.funnelOrder - b.funnelOrder;
       });
     }
@@ -1249,10 +1303,12 @@
         };
       });
 
-      const ranked = rankDimensions(results);
+      const scaleWeights = SCALE_WEIGHTS[answers.scale] || null;
+      const ranked = rankDimensions(results, scaleWeights);
       const primary = ranked[0];
       const secondary = ranked[1];
       const showSecondary = !!secondary;
+      const scaleInfluenced = !!(scaleWeights && scaleWeights[primary.id]);
 
       let standHtml = '';
       results.slice().sort(function(a, b) { return a.funnelOrder - b.funnelOrder; }).forEach(function(r) {
@@ -1289,6 +1345,9 @@
 
       const usedForFallback = [];
       let investHtml = buildRouteCard(pack.routeStartHere, primary, nextToolDimension(ranked, [primary.id]));
+      if (scaleInfluenced) {
+        investHtml += '<p class="scale-note">' + pack.scaleInfluencedNote + '</p>';
+      }
       usedForFallback.push(primary.id);
 
       if (showSecondary) {
