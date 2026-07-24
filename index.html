@@ -838,6 +838,7 @@
         <p class="output-text" data-i18n="triageNote">
           This is a quick read, not a full diagnosis. The deep-dive tool named above will take you further on the dimension that matters most.
         </p>
+        <p class="output-text" data-i18n="routerContact">Building that visibility into how you run the business is the work I do with operators. If you want to talk it through: <a href="mailto:rbisschoff@gmail.com?subject=Operator%20Diagnostic" data-contact-tool="operator-diagnostic">rbisschoff@gmail.com</a></p>
         <p class="output-text">
           <a href="https://rbisschoff.github.io/operator-intelligence-suite/" data-i18n="backLink">Back to the Operator Intelligence Suite</a>
         </p>
@@ -997,6 +998,7 @@
         outConstrainedTitle: 'Where growth is constrained',
         outInvestTitle: 'Where to go next',
         triageNote: 'This is a quick read, not a full diagnosis. The deep-dive tool named above will take you further on the dimension that matters most.',
+        routerContact: 'Building that visibility into how you run the business is the work I do with operators. If you want to talk it through: <a href="mailto:rbisschoff@gmail.com?subject=Operator%20Diagnostic" data-contact-tool="operator-diagnostic">rbisschoff@gmail.com</a>',
         backLink: 'Back to the Operator Intelligence Suite',
         restartBtn: 'Start again',
         footer: 'Framework by Roger Bisschoff · First published 2026 · Part of the <a href="https://rbisschoff.github.io/operator-intelligence-suite/">Operator Intelligence Suite</a>',
@@ -1096,6 +1098,7 @@
         outConstrainedTitle: 'Dove la crescita è vincolata',
         outInvestTitle: 'Dove andare adesso',
         triageNote: 'Questa è una lettura rapida, non una diagnosi completa. Lo strumento di approfondimento indicato sopra ti porta oltre sulla dimensione che conta di più.',
+        routerContact: 'Costruire questa visibilità nel modo in cui gestisci l\'attività è il lavoro che faccio con gli operatori. Se vuoi parlarne: <a href="mailto:rbisschoff@gmail.com?subject=Operator%20Diagnostic" data-contact-tool="operator-diagnostic">rbisschoff@gmail.com</a>',
         backLink: 'Torna alla Operator Intelligence Suite',
         restartBtn: 'Ricomincia',
         footer: 'Framework di Roger Bisschoff · Pubblicato per la prima volta nel 2026 · Parte della <a href="https://rbisschoff.github.io/operator-intelligence-suite/">Operator Intelligence Suite</a>',
@@ -1195,6 +1198,7 @@
         outConstrainedTitle: 'Wo Wachstum gehemmt ist',
         outInvestTitle: 'Wohin als Nächstes',
         triageNote: 'Dies ist ein schneller Check, keine vollständige Diagnose. Das oben genannte Deep-Dive-Tool bringt Sie in der wichtigsten Dimension weiter.',
+        routerContact: 'Genau diese Sichtbarkeit in Ihre Betriebsführung einzubauen ist die Arbeit, die ich mit Betreibern mache. Wenn Sie darüber sprechen möchten: <a href="mailto:rbisschoff@gmail.com?subject=Operator%20Diagnostic" data-contact-tool="operator-diagnostic">rbisschoff@gmail.com</a>',
         backLink: 'Zurück zur Operator Intelligence Suite',
         restartBtn: 'Neu starten',
         footer: 'Framework von Roger Bisschoff · Erstveröffentlichung 2026 · Teil der <a href="https://rbisschoff.github.io/operator-intelligence-suite/">Operator Intelligence Suite</a>',
@@ -1468,7 +1472,7 @@
       document.querySelectorAll('[data-i18n]').forEach(function(el) {
         const key = el.getAttribute('data-i18n');
         if (!pack[key]) return;
-        if (key === 'footer') el.innerHTML = pack[key];
+        if (key === 'footer' || key === 'routerContact') el.innerHTML = pack[key];
         else el.textContent = pack[key];
       });
 
