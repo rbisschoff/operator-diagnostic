@@ -526,10 +526,41 @@
 
     .hidden { display: none !important; }
 
+    /* ── ABOUT / FOOTER (matches Operator Intelligence Suite hub) ── */
+    .about-top-wrap { max-width: 1280px; margin: 0 auto; padding: 8px 20px 0; }
+    .about {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      border: none;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 20px;
+    }
+    .about-author { display: flex; align-items: center; gap: 10px; }
+    .author-avatar { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; object-fit: cover; object-position: center; border: 1px solid var(--border); }
+    .author-info { flex: 1; min-width: 0; }
+    .author-name { font-size: 14px; font-weight: 700; color: var(--ink); }
+    .author-role { font-size: 12px; font-weight: 600; color: var(--muted); margin-top: 2px; line-height: 1.4; }
+    .about-outcome { font-size: 13px; color: var(--ink2); line-height: 1.55; margin: 12px 0; text-align: center; }
+    .about-method-line { font-size: 11px; color: var(--muted); line-height: 1.5; margin: 0 0 10px; white-space: nowrap; overflow-x: auto; text-align: center; }
+    .about-method-line span[data-i18n$="Title"] { font-weight: 600; color: var(--ink); }
+    .about-method-arrow { margin: 0 6px; color: var(--muted2); }
+    @media (max-width: 640px) { .about-method-line { white-space: normal; overflow-x: visible; } }
+    .about-cta-row { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 12px; }
+    .about-cta-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--ink); background: var(--accent); padding: 12px 22px; border-radius: 100px; box-shadow: 0 4px 14px rgba(201, 169, 97, 0.35); transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
+    .about-cta-primary:hover { background: var(--accent-dark); color: #fff; transform: translateY(-2px); box-shadow: 0 7px 18px rgba(201, 169, 97, 0.45); }
+    .about-cta-primary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .author-link { font-size: 12px; font-weight: 600; color: var(--muted); transition: color 0.2s; flex-shrink: 0; }
+    .author-link:hover { color: var(--accent); }
+    .author-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .about-services-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; list-style: none; margin: 0; padding: 0; }
+    @media (max-width: 640px) { .about-services-list { grid-template-columns: repeat(2, 1fr); } }
+    .about-service-tag { font-size: 10px; font-weight: 600; color: var(--ink2); background: var(--card-tint); padding: 6px 8px; border-radius: 8px; text-align: center; display: flex; align-items: center; justify-content: center; line-height: 1.3; }
+
     footer {
       max-width: 1280px; margin: 0 auto;
-      padding: 16px 20px 24px; text-align: center;
-      font-size: 11px; color: var(--muted);
+      padding: 20px 20px 90px; text-align: center;
+      font-size: 12px; color: var(--muted);
       border-top: 1px solid var(--border);
     }
 
@@ -582,6 +613,106 @@
         justify-content: center;
       }
       .route-card, .result-actions { width: 100%; }
+    }
+
+    /* ── DESKTOP SCALE-UP ──
+       This is a linear, single-column questionnaire (one panel per
+       dimension, stacked top to bottom), not a card grid or dashboard,
+       so containers are widened moderately for breathing room rather
+       than to the ~1600px used on grid-heavy suite pages -- that would
+       stretch question text and choice buttons into uncomfortably long
+       lines. The header is chrome, so it gets a bit more room than the
+       reading column. */
+    @media (min-width: 1000px) {
+      .header-inner { max-width: 1100px; }
+
+      .hero { padding: 48px 20px 28px; }
+      .hero-inner { max-width: 860px; }
+      .hero h1 { font-size: clamp(32px, 2.8vw, 42px); margin-bottom: 12px; }
+      .hero-subtitle { font-size: 18px; max-width: 620px; }
+
+      main { max-width: 900px; padding: 0 32px 40px; }
+
+      .panel {
+        padding: 32px 36px;
+        border: 1px solid var(--border);
+        border-top: 4px solid var(--dim-accent);
+        margin-bottom: 24px;
+      }
+      .section-label { font-size: 12px; margin-bottom: 22px; }
+      .dim-badge { width: 22px; height: 22px; font-size: 11px; }
+      .dim-icon { width: 22px; height: 22px; }
+      .question-block { margin-bottom: 30px; }
+      .question-text { font-size: 17px; margin-bottom: 16px; }
+      .btn-group { gap: 10px; }
+      .choice-btn { font-size: 14px; padding: 13px 20px; }
+      .submit-btn { font-size: 17px; padding: 18px 24px; margin-top: 12px; }
+
+      .output-section-title { font-size: 15px; margin-bottom: 16px; }
+      .output-text { font-size: 15px; margin-bottom: 12px; }
+      .dim-row { grid-template-columns: 180px 1fr 84px; gap: 14px; padding: 14px 12px; }
+      .dim-name { font-size: 14px; }
+      .dim-bar-track { height: 12px; }
+      .dim-meta { font-size: 12px; }
+      .dim-meta strong { font-size: 15px; }
+      .constraint-card { padding: 18px 20px; }
+      .constraint-title { font-size: 17px; }
+      .constraint-text { font-size: 14px; }
+      .route-card { padding: 22px 24px; }
+      .route-title { font-size: 18px; }
+      .route-text { font-size: 14px; }
+      .route-potential { font-size: 14px; padding: 14px 16px; }
+      .route-link { font-size: 15px; padding: 13px 22px; }
+      .secondary-btn { font-size: 15px; padding: 13px 24px; }
+
+      .about-top-wrap { max-width: 900px; padding: 8px 32px 0; }
+      .about { padding: 28px 34px; }
+      .author-avatar { width: 44px; height: 44px; }
+      .author-name { font-size: 18px; }
+      .author-role { font-size: 14px; }
+      .about-cta-primary { font-size: 14px; padding: 14px 26px; }
+      .author-link { font-size: 13px; }
+      .about-outcome { font-size: 16px; max-width: 760px; margin: 18px auto; }
+      .about-method-line { font-size: 14px; margin-bottom: 16px; }
+      .about-service-tag { font-size: 12px; padding: 10px 12px; }
+      footer { max-width: 900px; font-size: 13px; padding: 28px 32px 90px; }
+    }
+
+    @media (min-width: 1500px) {
+      .header-inner { max-width: 1160px; }
+
+      .hero { padding: 56px 20px 32px; }
+      .hero-inner { max-width: 920px; }
+      .hero h1 { font-size: clamp(38px, 2.6vw, 50px); margin-bottom: 14px; }
+      .hero-subtitle { font-size: 20px; max-width: 680px; }
+
+      main { max-width: 960px; }
+
+      .panel { padding: 36px 40px; }
+      .section-label { font-size: 13px; }
+      .question-block { margin-bottom: 34px; }
+      .question-text { font-size: 18px; }
+      .choice-btn { font-size: 15px; padding: 14px 22px; }
+      .submit-btn { font-size: 18px; }
+
+      .output-section-title { font-size: 16px; }
+      .output-text { font-size: 16px; }
+      .constraint-title { font-size: 18px; }
+      .constraint-text { font-size: 15px; }
+      .route-title { font-size: 19px; }
+      .route-text { font-size: 15px; }
+      .route-link { font-size: 16px; padding: 14px 24px; }
+      .secondary-btn { font-size: 16px; padding: 14px 26px; }
+
+      .about-top-wrap { max-width: 960px; }
+      .about { padding: 34px 40px; }
+      .author-avatar { width: 50px; height: 50px; }
+      .author-name { font-size: 20px; }
+      .author-role { font-size: 15px; }
+      .about-outcome { font-size: 17px; max-width: 900px; margin: 22px auto; }
+      .about-method-line { font-size: 15px; }
+      .about-service-tag { font-size: 13px; padding: 11px 14px; }
+      footer { max-width: 960px; }
     }
   </style>
 </head>
@@ -850,8 +981,41 @@
     </div>
   </main>
 
+  <div class="about-top-wrap">
+    <section class="about">
+      <div class="about-author">
+        <img class="author-avatar" src="assets/roger-headshot.jpg" alt="Roger Bisschoff" width="28" height="28">
+        <div class="author-info">
+          <div class="author-name">Roger Bisschoff</div>
+          <div class="author-role" data-i18n="authorRole">Distribution and revenue consulting for short-term rental, vacation rental, and serviced apartment operators</div>
+        </div>
+      </div>
+      <div class="about-cta-row">
+        <a href="mailto:rbisschoff@gmail.com" class="about-cta-primary" data-i18n="getInTouch">Talk through your numbers →</a>
+        <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer" class="author-link" data-i18n="viewProfile">View profile</a>
+      </div>
+      <p class="about-outcome" data-i18n="aboutOutcome">I look across an operator's whole commercial picture — whether that's short-term rental or full property management — revenue, distribution, guest experience, owner retention, tech stack, to find where the real growth opportunity is.</p>
+      <p class="about-method-line">
+        <span data-i18n="methodMapTitle">Map</span> <span data-i18n="methodLineMap">everything</span>
+        <span class="about-method-arrow">→</span>
+        <span data-i18n="methodIdentifyTitle">identify</span> <span data-i18n="methodLineIdentify">the opportunity</span>
+        <span class="about-method-arrow">→</span>
+        <span data-i18n="methodQuantifyTitle">quantify</span> <span data-i18n="methodLineQuantify">its value</span>
+        <span class="about-method-arrow">→</span>
+        <span data-i18n="methodDirectTitle">direct</span> <span data-i18n="methodLineDirect">what to do first</span>
+      </p>
+      <ul class="about-services-list">
+        <li class="about-service-tag" data-i18n="aboutService1">Distribution &amp; OTA cost strategy</li>
+        <li class="about-service-tag" data-i18n="aboutService2">Owner retention &amp; supply stability</li>
+        <li class="about-service-tag" data-i18n="aboutService3">Guest experience &amp; repeat guest value</li>
+        <li class="about-service-tag" data-i18n="aboutService4">Tech stack &amp; portfolio profitability</li>
+      </ul>
+    </section>
+  </div>
+
   <footer>
-    <p data-i18n="footer">Framework by Roger Bisschoff · First published 2026 · Part of the <a href="https://rbisschoff.github.io/operator-intelligence-suite/">Operator Intelligence Suite</a></p>
+    <p data-i18n="footer1">Operator Intelligence Suite by <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a></p>
+    <p style="margin-top: 4px;" data-i18n="footer2">A practical toolkit for hospitality and short-term rental operators.</p>
   </footer>
 
   <script>
@@ -1004,7 +1168,24 @@
         routerContact: 'Building that visibility into how you run the business is the work I do with operators. If you want to talk it through: <a href="mailto:rbisschoff@gmail.com?subject=Operator%20Diagnostic" data-contact-tool="operator-diagnostic">rbisschoff@gmail.com</a>',
         backLink: 'Back to the Operator Intelligence Suite',
         restartBtn: 'Start again',
-        footer: 'Framework by Roger Bisschoff · First published 2026 · Part of the <a href="https://rbisschoff.github.io/operator-intelligence-suite/">Operator Intelligence Suite</a>',
+        authorRole: 'Distribution and revenue consulting for short-term rental, vacation rental, and serviced apartment operators',
+        getInTouch: 'Talk through your numbers →',
+        viewProfile: 'View profile',
+        aboutOutcome: 'I look across an operator\'s whole commercial picture — whether that\'s short-term rental or full property management — revenue, distribution, guest experience, owner retention, tech stack, to find where the real growth opportunity is.',
+        methodMapTitle: 'Map',
+        methodLineMap: 'everything',
+        methodIdentifyTitle: 'Identify',
+        methodLineIdentify: 'the opportunity',
+        methodQuantifyTitle: 'Quantify',
+        methodLineQuantify: 'its value',
+        methodDirectTitle: 'Direct',
+        methodLineDirect: 'what to do first',
+        aboutService1: 'Distribution & OTA cost strategy',
+        aboutService2: 'Owner retention & supply stability',
+        aboutService3: 'Guest experience & repeat guest value',
+        aboutService4: 'Tech stack & portfolio profitability',
+        footer1: 'Operator Intelligence Suite by <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a>',
+        footer2: 'A practical toolkit for hospitality and short-term rental operators.',
         bandStrong: 'Strong',
         bandGap: 'Some gap',
         bandWeak: 'Weak',
@@ -1104,7 +1285,24 @@
         routerContact: 'Costruire questa visibilità nel modo in cui gestisci l\'attività è il lavoro che faccio con gli operatori. Se vuoi parlarne: <a href="mailto:rbisschoff@gmail.com?subject=Operator%20Diagnostic" data-contact-tool="operator-diagnostic">rbisschoff@gmail.com</a>',
         backLink: 'Torna alla Operator Intelligence Suite',
         restartBtn: 'Ricomincia',
-        footer: 'Framework di Roger Bisschoff · Pubblicato per la prima volta nel 2026 · Parte della <a href="https://rbisschoff.github.io/operator-intelligence-suite/">Operator Intelligence Suite</a>',
+        authorRole: 'Consulenza in distribuzione e revenue per operatori di short-term rental, vacation rental, e appartamenti in gestione',
+        getInTouch: 'Parliamo dei tuoi numeri →',
+        viewProfile: 'Vedi profilo',
+        aboutOutcome: 'Guardo all\'intero quadro commerciale di un operatore — che sia short-term rental o full property management — ricavi, distribuzione, guest experience, retention dei proprietari, stack tecnologico, per trovare dove si trova la vera opportunità di crescita.',
+        methodMapTitle: 'Map',
+        methodLineMap: 'tutto',
+        methodIdentifyTitle: 'Identify',
+        methodLineIdentify: 'l\'opportunità',
+        methodQuantifyTitle: 'Quantify',
+        methodLineQuantify: 'il suo valore',
+        methodDirectTitle: 'Direct',
+        methodLineDirect: 'cosa fare per prima',
+        aboutService1: 'Distribuzione e costi OTA',
+        aboutService2: 'Retention proprietari e stabilità dell’offerta',
+        aboutService3: 'Guest experience e valore ospiti ricorrenti',
+        aboutService4: 'Stack tecnologico e redditività del portfolio',
+        footer1: 'Operator Intelligence Suite di <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a>',
+        footer2: 'Un toolkit pratico per operatori hospitality e short-term rental.',
         bandStrong: 'Solido',
         bandGap: 'Divario parziale',
         bandWeak: 'Debole',
@@ -1204,7 +1402,24 @@
         routerContact: 'Genau diese Sichtbarkeit in Ihre Betriebsführung einzubauen ist die Arbeit, die ich mit Betreibern mache. Wenn Sie darüber sprechen möchten: <a href="mailto:rbisschoff@gmail.com?subject=Operator%20Diagnostic" data-contact-tool="operator-diagnostic">rbisschoff@gmail.com</a>',
         backLink: 'Zurück zur Operator Intelligence Suite',
         restartBtn: 'Neu starten',
-        footer: 'Framework von Roger Bisschoff · Erstveröffentlichung 2026 · Teil der <a href="https://rbisschoff.github.io/operator-intelligence-suite/">Operator Intelligence Suite</a>',
+        authorRole: 'Vertriebs- und Revenue-Beratung für Short-Term-Rental-, Vacation-Rental- und Serviced-Apartment-Betreiber',
+        getInTouch: 'Sprechen wir über Ihre Zahlen →',
+        viewProfile: 'Profil ansehen',
+        aboutOutcome: 'Ich betrachte das gesamte kommerzielle Bild eines Betreibers — ob Short-Term-Rental oder volles Property Management — Umsatz, Distribution, Gästeerlebnis, Owner Retention, Tech-Stack, um herauszufinden, wo die eigentliche Wachstumschance liegt.',
+        methodMapTitle: 'Map',
+        methodLineMap: 'alles',
+        methodIdentifyTitle: 'Identify',
+        methodLineIdentify: 'die Chance',
+        methodQuantifyTitle: 'Quantify',
+        methodLineQuantify: 'ihren Wert',
+        methodDirectTitle: 'Direct',
+        methodLineDirect: 'was zuerst zu tun ist',
+        aboutService1: 'Distribution & OTA-Kostenstrategie',
+        aboutService2: 'Owner Retention & Angebotsstabilität',
+        aboutService3: 'Guest Experience & wiederkehrende Gäste',
+        aboutService4: 'Tech-Stack & Portfolio-Rentabilität',
+        footer1: 'Operator Intelligence Suite von <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a>',
+        footer2: 'Ein praktisches Toolkit für Hospitality- und Short-Term-Rental-Operatoren.',
         bandStrong: 'Stark',
         bandGap: 'Teilweise Lücke',
         bandWeak: 'Schwach',
@@ -1475,7 +1690,7 @@
       document.querySelectorAll('[data-i18n]').forEach(function(el) {
         const key = el.getAttribute('data-i18n');
         if (!pack[key]) return;
-        if (key === 'footer' || key === 'routerContact') el.innerHTML = pack[key];
+        if (key === 'footer1' || key === 'routerContact') el.innerHTML = pack[key];
         else el.textContent = pack[key];
       });
 
