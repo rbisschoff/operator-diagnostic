@@ -6,10 +6,6 @@
   <title>Operator Diagnostic — Operator Intelligence Suite</title>
   <meta name="description" content="Six-dimension commercial diagnostic for hospitality and short-term rental operators. Find which deep-dive tool to use first.">
   <link rel="canonical" href="https://rbisschoff.github.io/operator-diagnostic/">
-  <link rel="alternate" hreflang="en" href="https://rbisschoff.github.io/operator-diagnostic/?lang=en">
-  <link rel="alternate" hreflang="it" href="https://rbisschoff.github.io/operator-diagnostic/?lang=it">
-  <link rel="alternate" hreflang="de" href="https://rbisschoff.github.io/operator-diagnostic/?lang=de">
-  <link rel="alternate" hreflang="x-default" href="https://rbisschoff.github.io/operator-diagnostic/?lang=en">
 
   <!-- Open Graph / Twitter — title & description are regenerated at runtime from the hero copy
        in the I18N object below (see buildMetaFromCopy). These are the pre-JS fallback values. -->
@@ -19,26 +15,6 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Operator Diagnostic — Operator Intelligence Suite">
   <meta name="twitter:description" content="Answer a short set of questions and get a Growth Picture that points you to the right deep-dive tool.">
-
-  <script>
-    (function () {
-      const supported = ['en', 'it', 'de'];
-      const queryValue = new URLSearchParams(window.location.search).get('lang');
-      let lang;
-      if (queryValue !== null) {
-        lang = supported.includes(queryValue.toLowerCase()) ? queryValue.toLowerCase() : 'en';
-      } else {
-        try { lang = localStorage.getItem('ois-lang'); } catch (e) {}
-        if (!supported.includes(lang)) {
-          const browserLang = (navigator.language || '').slice(0, 2).toLowerCase();
-          lang = supported.includes(browserLang) ? browserLang : 'en';
-        }
-      }
-      document.documentElement.lang = lang;
-      window.__oisInitialLang = lang;
-      try { localStorage.setItem('ois-lang', lang); } catch (e) {}
-    })();
-  </script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPJ7VKS451"></script>
   <script>
@@ -136,46 +112,6 @@
     .header-link:hover { background: rgba(255,255,255,0.15); }
 
     .header-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-
-    .lang-switch {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 100px;
-      padding: 3px;
-      flex-shrink: 0;
-    }
-
-    .lang-btn {
-      font-family: inherit;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.55);
-      background: transparent;
-      border: none;
-      border-radius: 100px;
-      padding: 6px 10px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: all 0.15s;
-    }
-
-    .lang-btn:hover { color: #fff; }
-
-    .lang-btn.active {
-      background: rgba(255,255,255,0.16);
-      color: #fff;
-    }
-
-    .lang-flag {
-      font-size: 13px;
-      line-height: 1;
-    }
 
     .progress-strip {
       background: var(--card);
@@ -573,13 +509,6 @@
         padding: 10px 12px;
         padding-top: calc(10px + env(safe-area-inset-top));
       }
-      .lang-btn {
-        padding: 8px 9px;
-        min-height: 36px;
-        gap: 0;
-        font-size: 0;
-      }
-      .lang-flag { font-size: 15px; }
       .header-link {
         padding: 8px 10px;
         font-size: 12px;
@@ -710,11 +639,6 @@
           </div>
         </div>
         <div class="header-actions">
-          <div class="lang-switch" role="group" aria-label="Language">
-            <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇬🇧</span> EN</button>
-            <button type="button" class="lang-btn" data-lang="it" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇮🇹</span> IT</button>
-            <button type="button" class="lang-btn" data-lang="de" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇩🇪</span> DE</button>
-          </div>
           <a href="https://rbisschoff.github.io/operator-intelligence-suite/" class="header-link" data-i18n="suiteHub">Suite Hub</a>
         </div>
       </div>
@@ -1205,242 +1129,6 @@
         routeOpenTool: 'Open {tool} →',
         routeStartWith: 'For now, start with {name}, the next weakest dimension where a deep dive is available.',
         routeReviewScores: 'Review the dimension scores above and use the suite hub to choose your next step.'
-      },
-      it: {
-        brandTitle: 'Operator Diagnostic',
-        brandSubtitle: 'Operator Intelligence Suite',
-        suiteHub: 'Suite Hub',
-        heroEyebrow: 'Operator Series · Quadro di Crescita',
-        heroTitle: 'Quale strumento dovresti usare per primo?',
-        heroSubtitle: 'Sei domande veloci, circa due minuti, e un Quadro di Crescita ordinato che ti mostra esattamente dove hai più margine di crescita.',
-        heroTitleOutput: 'Il tuo Quadro di Crescita',
-        heroSubtitleOutput: 'Divari ordinati su sei dimensioni, con gli approfondimenti che quantificano ciò che stai lasciando sul tavolo.',
-        progressTemplate: 'risposte {count} di {total}',
-        scale_q: 'Quante unità gestisci, all\'incirca?',
-        scale_a: '1–50',
-        scale_b: '51–200',
-        scale_c: '201–750',
-        scale_d: '750+',
-        scaleInfluencedNote: 'Vista la dimensione del tuo portafoglio, è spesso qui che gli operatori al tuo stadio lo sentono per primi.',
-        secPortfolio: 'Il tuo portafoglio',
-        secAi: 'Visibilità AI',
-        secDemand: 'Richiesta',
-        secDist: 'Costo di distribuzione',
-        secUnit: 'Redditività per unità',
-        secGx: 'Esperienza ospite',
-        secRep: 'Valore ospiti ripetuti',
-        secOwner: 'Fidelizzazione proprietari',
-        ai1_q: 'Strumenti come ChatGPT riescono davvero a leggere bene il tuo sito, o qualcosa di tecnico potrebbe bloccarli senza che tu lo sappia?',
-        ai1_a: 'Sì', ai1_b: 'Non sono sicuro', ai1_c: 'No',
-        ai2_q: 'La tua struttura è descritta con termini specifici da viaggiatore (il quartiere, a chi si adatta, i dettagli pratici) invece che con un linguaggio di marketing generico?',
-        ai2_a: 'Sì, specifico', ai2_b: 'In parte', ai2_c: 'No, generico',
-        dem1_q: 'Sai quali mercati di origine guidano davvero le tue prenotazioni?',
-        dem1_a: 'Sì, chiaramente', dem1_b: 'Approssimativamente', dem1_c: 'No',
-        dem2_q: 'Stai lavorando attivamente per attirare tu stesso ospiti da un mercato promettente, o lasci che se ne occupino del tutto le OTA?',
-        dem2_a: 'Lo sto sviluppando attivamente', dem2_b: 'Ci sto pensando', dem2_c: 'Lo lascio alle OTA',
-        dist1_q: 'Sai quanto ti costa davvero ogni canale di prenotazione, includendo i costi nascosti, non solo la commissione che vedi in fattura?',
-        dist1_a: 'Sì', dist1_b: 'Approssimativamente', dist1_c: 'No',
-        dist2_q: 'Il tuo canale diretto è più economico per l’ospite rispetto alla tua migliore tariffa OTA?',
-        dist2_a: 'Sì', dist2_b: 'Più o meno lo stesso', dist2_c: 'No',
-        dist3_q: 'Più della metà del tuo volume è concentrato su una sola OTA?',
-        dist3_a: 'No', dist3_b: 'In parte', dist3_c: 'Sì',
-        unit1_q: 'Riesci a vedere la redditività a livello di singola unità, non solo la media di portafoglio?',
-        unit1_a: 'Sì', unit1_b: 'Parzialmente', unit1_c: 'No',
-        unit2_q: 'Sai quali delle tue unità perdono denaro?',
-        unit2_a: 'Sì', unit2_b: 'Approssimativamente', unit2_c: 'No',
-        gx1_q: 'Raccogli e agisci sul feedback degli ospiti in modo sistematico, o leggi solo le recensioni quando arrivano?',
-        gx1_a: 'Sistematicamente', gx1_b: 'Occasionalmente', gx1_c: 'Non proprio',
-        gx2_q: 'Quando qualcosa va storto durante un soggiorno, di solito quanto velocemente gli ospiti ricevono una risposta da te?',
-        gx2_a: 'Lo stesso giorno', gx2_b: 'Entro uno o due giorni', gx2_c: 'Non sono sicuro',
-        rep1_q: 'Quando gli ospiti tornano, riprenotano principalmente in modo diretto, o passano dalla OTA che hai già pagato per acquisirli?',
-        rep1_a: 'Principalmente diretto', rep1_b: 'Misto', rep1_c: 'Principalmente via OTA',
-        rep2_q: 'Hai calcolato il ricavo annuale e la commissione persi quando gli ospiti ripetuti riprenotano tramite una OTA?',
-        rep2_a: 'Sì', rep2_b: 'No, ma ne sono consapevole', rep2_c: 'Non ci ho mai pensato',
-        own1_q: 'Sai quanti proprietari hai perso verso un altro gestore negli ultimi 12 mesi?',
-        own1_a: 'Sì', own1_b: 'Approssimativamente', own1_c: 'No',
-        own2_q: 'Tieni traccia se stai davvero consegnando il ricavo che avevi promesso ai proprietari alla firma?',
-        own2_a: 'Sì', own2_b: 'Approssimativamente', own2_c: 'No',
-        submitBtn: 'Vedi il mio Quadro di Crescita',
-        outStandTitle: 'Dove ti trovi oggi',
-        outConstrainedTitle: 'Dove la crescita è vincolata',
-        outInvestTitle: 'Dove andare adesso',
-        triageNote: 'Questa è una lettura rapida, non una diagnosi completa. Lo strumento di approfondimento indicato sopra ti porta oltre sulla dimensione che conta di più.',
-        routerContact: 'Costruire questa visibilità nel modo in cui gestisci l\'attività è il lavoro che faccio con gli operatori. Se vuoi parlarne: <a href="mailto:rbisschoff@gmail.com?subject=Operator%20Diagnostic" data-contact-tool="operator-diagnostic">rbisschoff@gmail.com</a>',
-        backLink: 'Torna alla Operator Intelligence Suite',
-        restartBtn: 'Ricomincia',
-        authorRole: 'Consulenza di crescita commerciale per operatori short-term rental, vacation rental e appartamenti in gestione',
-        getInTouch: 'Parliamo dei tuoi numeri →',
-        viewProfile: 'Vedi profilo',
-        aboutOutcome: 'Guardo all\'intero quadro commerciale di un operatore — che sia short-term rental o full property management — ricavi, distribuzione, guest experience, retention dei proprietari, stack tecnologico, per trovare dove si trova la vera opportunità di crescita.',
-        aboutEngagement: 'Gli incarichi sono a progetto: una revisione mirata su un\'area commerciale specifica, oppure supporto di consulenza continuativo secondo necessità. Nessun impegno fisso richiesto per iniziare.',
-        methodMapTitle: 'Map',
-        methodLineMap: 'tutto',
-        methodIdentifyTitle: 'Identify',
-        methodLineIdentify: 'l\'opportunità',
-        methodQuantifyTitle: 'Quantify',
-        methodLineQuantify: 'il suo valore',
-        methodDirectTitle: 'Direct',
-        methodLineDirect: 'cosa fare per prima',
-        aboutService1: 'Distribuzione e costi OTA',
-        aboutService2: 'Retention proprietari e stabilità dell’offerta',
-        aboutService3: 'Guest experience e valore ospiti ricorrenti',
-        aboutService4: 'Stack tecnologico e redditività del portfolio',
-        footer1: 'Operator Intelligence Suite di <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a>',
-        footer2: 'Un toolkit pratico per operatori hospitality e short-term rental.',
-        bandStrong: 'Solido',
-        bandGap: 'Divario parziale',
-        bandWeak: 'Debole',
-        dimAiName: 'Visibilità AI',
-        dimAiConstraint: 'Se gli assistenti non riescono a leggere o raccomandare il tuo sito diretto, il lavoro di distribuzione a valle ha meno su cui poggiare.',
-        dimAiPotential: 'Scopri se l’AI riesce a trovarti e raccomandarti, e se può prenotarti. Individua le lacune strutturali che rendono il tuo sito diretto invisibile agli assistenti.',
-        dimDemandName: 'Domanda',
-        dimDemandConstraint: 'Senza una lettura chiara dei mercati di origine e del potenziale inbound, la spesa sui canali è più difficile da giustificare.',
-        dimDemandPotential: 'Testa la readiness per l’inbound cinese prima di impegnare budget. Proprietà, canali e operazioni valutati rispetto a ciò di cui quella domanda ha davvero bisogno.',
-        dimDistName: 'Costo di distribuzione',
-        dimDistConstraint: 'Il margine si perde nel mix di canali prima ancora di arrivare all’economia a livello di unità o di ospite ripetuto.',
-        dimDistPotential: 'Quantifica il costo reale del tuo mix di canali, inclusi i costi nascosti e il rischio di concentrazione OTA, non solo la commissione dichiarata.',
-        dimUnitName: 'Redditività per unità',
-        dimUnitConstraint: 'Le medie di portafoglio possono nascondere unità che distruggono valore silenziosamente.',
-        dimUnitPotential: 'Confronta la media di portafoglio con il margine di contribuzione della singola unità e individua le unità che sembrano a posto nella media ma perdono denaro da sole.',
-        dimGxName: 'Esperienza ospite',
-        dimGxConstraint: 'Cicli di feedback debole e tassi di ritorno non noti rendono più difficile migliorare ciò che gli ospiti vivono davvero.',
-        dimGxPotential: 'Scopri se il tuo rating nasconde un divario di ascolto. Confronta tasso di risposta alle recensioni, velocità dei messaggi e tasso di problemi con ciò che un operatore solido sembra davvero.',
-        dimRepName: 'Valore ospiti ripetuti',
-        dimRepConstraint: 'Gli ospiti ripetuti che riprenotano via OTA trasformano ricavo gratuito in una commissione che hai già pagato una volta.',
-        dimRepPotential: 'Stima il ricavo e la commissione persi quando ospiti di ritorno e soggiorni B2B riprenotano via OTA invece che direttamente.',
-        dimOwnName: 'Fidelizzazione proprietari',
-        dimOwnConstraint: 'Il churn dei proprietari ti costa l\'intera proprietà, non solo una prenotazione, e di solito resta invisibile finché è già successo.',
-        dimOwnPotential: 'Vedi quanto è davvero esposto il tuo portafoglio proprietari: tasso di churn, ricavo consegnato rispetto a quello promesso, e se raccogli davvero un segnale di soddisfazione dei proprietari.',
-        gxInDev: 'Lo strumento dedicato all’esperienza ospite è in sviluppo.',
-        constraintPrimary: 'Vincolo primario',
-        constraintSecondary: 'Vincolo secondario',
-        dimPrimarySuffix: ' · vincolo primario',
-        routeStartHere: 'Inizia da qui',
-        routeThenLookAt: 'Poi guarda',
-        routeWhatYouFind: 'Cosa puoi scoprire',
-        routeWhatYouFindInstead: 'Cosa puoi scoprire invece',
-        routeRunDeepDive: 'Esegui subito l’approfondimento. Trasforma questa lettura rapida in un numero reale e misurabile.',
-        routeOpenTool: 'Apri {tool} →',
-        routeStartWith: 'Per ora, inizia con {name}, la dimensione più debole successiva dove è disponibile un approfondimento.',
-        routeReviewScores: 'Rivedi i punteggi delle dimensioni sopra e usa la suite hub per scegliere il prossimo passo.'
-      },
-      de: {
-        brandTitle: 'Operator Diagnostic',
-        brandSubtitle: 'Operator Intelligence Suite',
-        suiteHub: 'Suite Hub',
-        heroEyebrow: 'Operator Series · Wachstumsbild',
-        heroTitle: 'Welches Tool sollten Sie zuerst nutzen?',
-        heroSubtitle: 'Sechs kurze Fragen, etwa zwei Minuten, und ein rangiertes Wachstumsbild, das genau zeigt, wo Sie am meisten Wachstumsspielraum haben.',
-        heroTitleOutput: 'Ihr Wachstumsbild',
-        heroSubtitleOutput: 'Rangierte Lücken über sechs Dimensionen, mit den Deep Dives, die quantifizieren, was Sie auf dem Tisch liegen lassen.',
-        progressTemplate: 'beantwortet {count} von {total}',
-        scale_q: 'Wie viele Units verwalten Sie ungefähr?',
-        scale_a: '1–50',
-        scale_b: '51–200',
-        scale_c: '201–750',
-        scale_d: '750+',
-        scaleInfluencedNote: 'Angesichts der Größe Ihres Portfolios spüren Betreiber in Ihrer Phase das meist zuerst hier.',
-        secPortfolio: 'Ihr Portfolio',
-        secAi: 'AI-Sichtbarkeit',
-        secDemand: 'Nachfrage',
-        secDist: 'Distributionskosten',
-        secUnit: 'Unit-Profitabilität',
-        secGx: 'Gasterlebnis',
-        secRep: 'Wert wiederkehrender Gäste',
-        secOwner: 'Eigentümerbindung',
-        ai1_q: 'Können KI-Tools wie ChatGPT Ihre Website tatsächlich richtig lesen, oder blockiert sie möglicherweise etwas Technisches, ohne dass Sie es merken?',
-        ai1_a: 'Ja', ai1_b: 'Nicht sicher', ai1_c: 'Nein',
-        ai2_q: 'Wird Ihr Objekt in konkreten Reisenden-Begriffen beschrieben (die Nachbarschaft, für wen es passt, die praktischen Details) statt in generischer Marketingsprache?',
-        ai2_a: 'Ja, konkret', ai2_b: 'Etwas', ai2_c: 'Nein, generisch',
-        dem1_q: 'Wissen Sie, welche Quellmärkte Ihre Buchungen tatsächlich treiben?',
-        dem1_a: 'Ja, klar', dem1_b: 'Ungefähr', dem1_c: 'Nein',
-        dem2_q: 'Arbeiten Sie aktiv daran, Gäste aus einem vielversprechenden neuen Markt selbst anzuziehen, oder überlassen Sie das komplett den OTAs?',
-        dem2_a: 'Aktiv in Entwicklung', dem2_b: 'Erwäge es', dem2_c: 'Überlasse es den OTAs',
-        dist1_q: 'Wissen Sie, was jeder Buchungskanal Sie wirklich kostet, wenn man die versteckten Kosten einbezieht, nicht nur die Provision auf der Rechnung?',
-        dist1_a: 'Ja', dist1_b: 'Ungefähr', dist1_c: 'Nein',
-        dist2_q: 'Ist Ihr Direktkanal für den Gast günstiger als Ihre beste OTA-Rate?',
-        dist2_a: 'Ja', dist2_b: 'Etwa gleich', dist2_c: 'Nein',
-        dist3_q: 'Ist mehr als die Hälfte Ihres Volumens auf eine einzige OTA konzentriert?',
-        dist3_a: 'Nein', dist3_b: 'Etwas', dist3_c: 'Ja',
-        unit1_q: 'Sehen Sie die Profitabilität auf Ebene einer einzelnen Unit, nicht nur den Portfolio-Durchschnitt?',
-        unit1_a: 'Ja', unit1_b: 'Teilweise', unit1_c: 'Nein',
-        unit2_q: 'Wissen Sie, welche Ihrer Units Geld verlieren?',
-        unit2_a: 'Ja', unit2_b: 'Ungefähr', unit2_c: 'Nein',
-        gx1_q: 'Erfassen Sie Gästefeedback systematisch und handeln danach, oder lesen Sie Bewertungen nur, wenn sie eintreffen?',
-        gx1_a: 'Systematisch', gx1_b: 'Gelegentlich', gx1_c: 'Eigentlich nicht',
-        gx2_q: 'Wenn während eines Aufenthalts etwas schiefgeht, wie schnell hören Gäste normalerweise von Ihnen?',
-        gx2_a: 'Am selben Tag', gx2_b: 'Innerhalb von ein bis zwei Tagen', gx2_c: 'Nicht sicher',
-        rep1_q: 'Wenn Gäste wiederkommen, buchen sie meist direkt neu, oder kommen sie über die OTA zurück, die Sie schon einmal bezahlt haben, um sie zu gewinnen?',
-        rep1_a: 'Meist direkt', rep1_b: 'Gemischt', rep1_c: 'Meist über OTA',
-        rep2_q: 'Haben Sie den jährlichen Umsatz und die Provision berechnet, die verloren gehen, wenn Wiederholungsgäste über eine OTA neu buchen?',
-        rep2_a: 'Ja', rep2_b: 'Nein, aber mir bewusst', rep2_c: 'Nie darüber nachgedacht',
-        own1_q: 'Wissen Sie, wie viele Eigentümer Sie in den letzten 12 Monaten an einen anderen Verwalter verloren haben?',
-        own1_a: 'Ja', own1_b: 'Ungefähr', own1_c: 'Nein',
-        own2_q: 'Verfolgen Sie, ob Sie tatsächlich den Umsatz liefern, den Sie Eigentümern bei Vertragsabschluss versprochen haben?',
-        own2_a: 'Ja', own2_b: 'Ungefähr', own2_c: 'Nein',
-        submitBtn: 'Mein Wachstumsbild ansehen',
-        outStandTitle: 'Wo Sie heute stehen',
-        outConstrainedTitle: 'Wo Wachstum gehemmt ist',
-        outInvestTitle: 'Wohin als Nächstes',
-        triageNote: 'Dies ist ein schneller Check, keine vollständige Diagnose. Das oben genannte Deep-Dive-Tool bringt Sie in der wichtigsten Dimension weiter.',
-        routerContact: 'Genau diese Sichtbarkeit in Ihre Betriebsführung einzubauen ist die Arbeit, die ich mit Betreibern mache. Wenn Sie darüber sprechen möchten: <a href="mailto:rbisschoff@gmail.com?subject=Operator%20Diagnostic" data-contact-tool="operator-diagnostic">rbisschoff@gmail.com</a>',
-        backLink: 'Zurück zur Operator Intelligence Suite',
-        restartBtn: 'Neu starten',
-        authorRole: 'Beratung für kommerzielles Wachstum für STR-, Ferienwohnungs- und Serviced-Apartment-Betreiber',
-        getInTouch: 'Sprechen wir über Ihre Zahlen →',
-        viewProfile: 'Profil ansehen',
-        aboutOutcome: 'Ich betrachte das gesamte kommerzielle Bild eines Betreibers — ob Short-Term-Rental oder volles Property Management — Umsatz, Distribution, Gästeerlebnis, Owner Retention, Tech-Stack, um herauszufinden, wo die eigentliche Wachstumschance liegt.',
-        aboutEngagement: 'Engagements sind projektbasiert: eine gezielte Prüfung eines einzelnen kommerziellen Bereichs oder laufende Beratungsunterstützung nach Bedarf. Kein fester Vertrag nötig, um zu starten.',
-        methodMapTitle: 'Map',
-        methodLineMap: 'alles',
-        methodIdentifyTitle: 'Identify',
-        methodLineIdentify: 'die Chance',
-        methodQuantifyTitle: 'Quantify',
-        methodLineQuantify: 'ihren Wert',
-        methodDirectTitle: 'Direct',
-        methodLineDirect: 'was zuerst zu tun ist',
-        aboutService1: 'Distribution & OTA-Kostenstrategie',
-        aboutService2: 'Owner Retention & Angebotsstabilität',
-        aboutService3: 'Guest Experience & wiederkehrende Gäste',
-        aboutService4: 'Tech-Stack & Portfolio-Rentabilität',
-        footer1: 'Operator Intelligence Suite von <a href="https://www.linkedin.com/in/roger-bisschoff/" target="_blank" rel="noopener noreferrer">Roger Bisschoff</a>',
-        footer2: 'Ein praktisches Toolkit für Hospitality- und Short-Term-Rental-Operatoren.',
-        bandStrong: 'Stark',
-        bandGap: 'Teilweise Lücke',
-        bandWeak: 'Schwach',
-        dimAiName: 'AI-Sichtbarkeit',
-        dimAiConstraint: 'Wenn Assistenten Ihre Direktseite nicht lesen oder empfehlen können, hat nachgelagerte Distributionsarbeit weniger, worauf sie aufbauen kann.',
-        dimAiPotential: 'Prüfen Sie, ob AI Sie finden und empfehlen kann, und ob sie Sie buchen kann. Erkennen Sie die strukturellen Lücken, die Ihre Direktseite für Assistenten unsichtbar machen.',
-        dimDemandName: 'Nachfrage',
-        dimDemandConstraint: 'Ohne klaren Blick auf Quellmärkte und Inbound-Potenzial ist Kanalspending schwerer zu rechtfertigen.',
-        dimDemandPotential: 'Testen Sie die Readiness für China-Inbound, bevor Sie Budget festlegen. Objekt, Kanäle und Betrieb bewertet gegen das, was diese Nachfrage tatsächlich braucht.',
-        dimDistName: 'Distributionskosten',
-        dimDistConstraint: 'Margen versickern im Kanal-Mix, bevor Sie überhaupt zur Unit-Ebene oder Wiederholungsgast-Ökonomie kommen.',
-        dimDistPotential: 'Quantifizieren Sie die wahren Kosten Ihres Kanal-Mix, inklusive versteckter Kosten und OTA-Konzentrationsrisiko, nicht nur der genannten Provision.',
-        dimUnitName: 'Unit-Profitabilität',
-        dimUnitConstraint: 'Portfolio-Durchschnitte können Units verstecken, die still Wert vernichten.',
-        dimUnitPotential: 'Vergleichen Sie Portfolio-Durchschnitt mit dem Beitragsmargin einzelner Units und finden Sie Units, die im Durchschnitt gut aussehen, aber allein Geld verlieren.',
-        dimGxName: 'Gasterlebnis',
-        dimGxConstraint: 'Schwache Feedback-Schleifen und unbekannte Rückkehrquoten erschweren es, das tatsächliche Gästeerlebnis zu verbessern.',
-        dimGxPotential: 'Prüfen Sie, ob Ihre Bewertung eine Zuhör-Lücke verbirgt. Bewerten Sie Antwortquote auf Reviews, Nachrichtengeschwindigkeit und Problemquote gegen das, was ein starker Betreiber wirklich aussieht.',
-        dimRepName: 'Wert wiederkehrender Gäste',
-        dimRepConstraint: 'Wiederkehrende Gäste, die über OTA neu buchen, verwandeln kostenlosen Umsatz in eine Provision, die Sie bereits einmal bezahlt haben.',
-        dimRepPotential: 'Schätzen Sie Umsatz und Provision, die verloren gehen, wenn Rückkehrer und B2B-Aufenthalte über OTA statt direkt neu buchen.',
-        dimOwnName: 'Eigentümerbindung',
-        dimOwnConstraint: 'Eigentümer-Churn kostet Sie die gesamte Immobilie, nicht nur eine Buchung, und bleibt meist unsichtbar, bis er schon passiert ist.',
-        dimOwnPotential: 'Sehen Sie, wie exponiert Ihr Eigentümer-Buch wirklich ist: Churn-Rate, gelieferter vs. versprochener Umsatz, und ob Sie überhaupt ein echtes Zufriedenheitssignal der Eigentümer erheben.',
-        gxInDev: 'Das dedizierte Tool für Gasterlebnis ist in Entwicklung.',
-        constraintPrimary: 'Primärer Engpass',
-        constraintSecondary: 'Sekundärer Engpass',
-        dimPrimarySuffix: ' · primärer Engpass',
-        routeStartHere: 'Hier starten',
-        routeThenLookAt: 'Dann ansehen',
-        routeWhatYouFind: 'Was Sie herausfinden können',
-        routeWhatYouFindInstead: 'Was Sie stattdessen herausfinden können',
-        routeRunDeepDive: 'Starten Sie jetzt den Deep Dive. Er macht aus diesem schnellen Check eine echte, messbare Zahl.',
-        routeOpenTool: '{tool} öffnen →',
-        routeStartWith: 'Beginnen Sie vorerst mit {name}, der nächstschwächsten Dimension, für die ein Deep Dive verfügbar ist.',
-        routeReviewScores: 'Prüfen Sie die Dimensionswerte oben und nutzen Sie den Suite Hub, um Ihren nächsten Schritt zu wählen.'
       }
     };
 
@@ -1734,26 +1422,12 @@
         else el.textContent = pack[key];
       });
 
-      document.querySelectorAll('.lang-btn').forEach(function(btn) {
-        const on = btn.getAttribute('data-lang') === currentLang;
-        btn.classList.toggle('active', on);
-        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-      });
-
-      try { localStorage.setItem('ois-lang', currentLang); } catch (e) {}
-
       updateProgress();
 
       if (!document.getElementById('output-state').classList.contains('hidden')) {
         renderOutput(true);
       }
     }
-
-    document.querySelectorAll('.lang-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        applyLang(btn.getAttribute('data-lang'));
-      });
-    });
 
     document.getElementById('diagnostic-form').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -1762,7 +1436,8 @@
 
     document.getElementById('restart-btn').addEventListener('click', resetDiagnostic);
 
-    applyLang(window.__oisInitialLang || 'en');
+    // English is the only supported language.
+    applyLang('en');
   </script>
 </body>
 </html>
